@@ -4,7 +4,7 @@ filetype on
 filetype off
 
 "[VUNDLE]---------------------------------------------------------------------
-set rtp += ~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
@@ -28,10 +28,10 @@ filetype plugin indent on
 set nu
 
 "Column width is 80 as per PEP 8
-set cc = 80
+set cc=80
 
 "Always show the statusline
-set ls = 2
+set ls=2
 
 "Show matching parens/brackets/etc...
 set showmatch
@@ -42,20 +42,20 @@ set hlsearch
 
 "[THEME]----------------------------------------------------------------------
 syntax on
-set t_Co       = 256
-set background = dark
-set encoding   = utf-8
+set t_Co=256
+set background=dark
+set encoding=utf-8
 colorscheme Tomorrow-Night
 
 "[KEYS]-----------------------------------------------------------------------
 "Backspace acts as it does in other apps
-set backspace = 2
+set backspace=2
 
 "Tabs
 set autoindent
 set copyindent
-set tabstop    = 4
-set shiftwidth = 4
+set tabstop=4
+set shiftwidth=4
 
 "Undo / Redo
 noremap <C-Z> u
