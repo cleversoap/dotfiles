@@ -1,5 +1,6 @@
 "[INITIALISE]-----------------------------------------------------------------
 set nocompatible
+filetype on
 filetype off
 
 "[VUNDLE]---------------------------------------------------------------------
@@ -32,6 +33,13 @@ set cc = 80
 "Always show the statusline
 set ls = 2
 
+"Show matching parens/brackets/etc...
+set showmatch
+
+"Search
+set incsearch
+set hlsearch
+
 "[THEME]----------------------------------------------------------------------
 syntax on
 set t_Co       = 256
@@ -48,6 +56,21 @@ set autoindent
 set copyindent
 set tabstop    = 4
 set shiftwidth = 4
+
+"Undo / Redo
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
+
+"NerdTree
+noremap <F6> :NERDTreeToggle<CR>
+
+"GUndo
+nnoremap <F5> :GundoToggle<CR>
+
+"FastSwitch for C-Types
+map <C-Up> :FSAbove<CR>
 
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
