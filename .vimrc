@@ -18,6 +18,8 @@ Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rygwdn/vim-conque'
 Bundle 'actionscript.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'dwm.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
@@ -39,6 +41,9 @@ set showmatch
 "Search
 set incsearch
 set hlsearch
+
+"Autocompletion
+set completeopt=menu,menuone,longest
 
 "[THEME]----------------------------------------------------------------------
 syntax on
