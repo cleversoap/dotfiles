@@ -16,6 +16,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rygwdn/vim-conque'
+Bundle 'actionscript.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
