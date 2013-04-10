@@ -27,7 +27,6 @@ filetype plugin indent on
 set nu
 
 "Column width is 80 as per PEP 8
-"I apply it to all languages instead of just python
 set cc = 80
 
 "Always show the statusline
