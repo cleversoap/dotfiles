@@ -14,6 +14,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline-fonts'
 Bundle 'godlygeek/tabular'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
@@ -56,6 +57,9 @@ set t_Co=256
 set background=dark
 set encoding=utf-8
 colorscheme Tomorrow-Night
+if has("gui_running")
+	set guifont=Menlo\ for\ Powerline
+endif
 
 "[KEYS]-----------------------------------------------------------------------
 "Backspace acts as it does in other apps
