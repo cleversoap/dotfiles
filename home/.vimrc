@@ -13,6 +13,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline'
 Bundle 'godlygeek/tabular'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
@@ -44,6 +45,10 @@ set hlsearch
 
 "Autocompletion
 set completeopt=menu,menuone,longest
+
+"[PLUGINS']-------------------------------------------------------------------
+"Powerline
+set rtp+=~/.vim/bundle/powerline/bindings/vim
 
 "[THEME]----------------------------------------------------------------------
 syntax on
