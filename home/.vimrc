@@ -48,7 +48,7 @@ set completeopt=menu,menuone,longest
 
 "[PLUGINS']-------------------------------------------------------------------
 "Powerline
-set rtp+=~/.vim/bundle/powerline/bindings/vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 "[THEME]----------------------------------------------------------------------
 syntax on
