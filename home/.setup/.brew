@@ -1,0 +1,11 @@
+# Build tools
+brew install autoconf automake
+
+# fishfish shell
+brew install fishfish
+
+# Python
+brew install python python3
+
+# Ruby
+brew install ruby
