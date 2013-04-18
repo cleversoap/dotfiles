@@ -22,6 +22,30 @@ end
 
 set fish_greeting ""
 set BROWSER 'open'
-set PATH /usr/local/bin /bin /usr/local/share/npm/bin /usr/local/share/aclocal /sbin /usr/local/Cellar/fishfish/OpenBeta_r2/bin /usr/X11R6/bin /usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin /Users/mattclever/Code/depot_tools
 set -x CLICOLOR 1
+
+# Set the PATH with basic control
+# over directories that may or may not exist
+# as not existing results in an error
+
+# Global paths that should ALWAYS exist
+set -x PATH /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+# Autoconf
+set -x PATH /usr/local/share/aclocal $PATH
+
+# X11
+set -x PATH /usr/X11R6/bin /opt/X11/bin $PATH
+
+# Node executables
+set -x PATH /usr/local/share/npm/bin $PATH
+
+# Flex Compilers
+set -x PATH /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin $PATH
+
+# Ruby (RVM and Gems)
+set -x PATH ~/.rvm/gems/ruby-1.9.3-p194/bin ~/.rvm/gems/ruby-1.9.3-p194@global/bin ~/.rvm/rubies/ruby-1.9.3-p194/bin ~/.rvm/bin $PATH
+
+# Fish
+set -x PATH /usr/local/Cellar/fishfish/OpenBeta_r2/bin $PATH
 
