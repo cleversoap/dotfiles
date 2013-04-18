@@ -22,5 +22,7 @@ end
 
 set fish_greeting ""
 set BROWSER 'open'
-set PATH /usr/local/bin /usr/local/sbin ~/bin /usr/local/share/npm/bin /usr/local/share/aclocal /opt/local/bin /opt/local/sbin /sbin /usr/local/Cellar/fishfish/OpenBeta_r2/bin /usr/X11R6/bin /usr/bin /bin /usr/sbin /sbin opt/X11/bin /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin /Users/mattclever/Code/depot_tools
+set PATH /usr/local/bin /usr/local/sbin ~/bin /usr/local/share/npm/bin /usr/local/share/aclocal /opt/local/bin /opt/local/sbin /sbin /usr/local/Cellar/fishfish/OpenBeta_r2/bin /usr/X11R6/bin /usr/bin /bin /usr/sbin /sbin opt/X11/bin /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin /Users/mattclever/Code/depot_tools $PATH
+
+set -x CLICOLOR 1
 
