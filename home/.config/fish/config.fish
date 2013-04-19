@@ -29,7 +29,7 @@ set -x CLICOLOR 1
 # as not existing results in an error
 
 # Global paths that should ALWAYS exist
-set -x PATH /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 # Autoconf
 set -x PATH /usr/local/share/aclocal $PATH
