@@ -18,14 +18,8 @@ Bundle 'Lokaltog/powerline-fonts'
 Bundle 'godlygeek/tabular'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
-Bundle 'rygwdn/vim-conque'
 Bundle 'jeroenbourgois/vim-actionscript'
-Bundle 'scrooloose/syntastic'
 Bundle 'dwm.vim'
-"At this point YouCompleteMe isn't worth it for
-"all the issues it causes and how difficult the upgrade
-"process is on OSX
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
