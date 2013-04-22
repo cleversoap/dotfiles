@@ -29,7 +29,7 @@ set -x CLICOLOR 1
 # as not existing results in an error
 
 # Global paths that should ALWAYS exist
-set -x PATH /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 # Autoconf
 set -x PATH /usr/local/share/aclocal $PATH
@@ -44,7 +44,7 @@ set -x PATH /usr/local/share/npm/bin $PATH
 set -x PATH /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin $PATH
 
 # Ruby (RVM and Gems)
-set -x PATH ~/.rvm/gems/ruby-1.9.3-p194/bin ~/.rvm/gems/ruby-1.9.3-p194@global/bin ~/.rvm/rubies/ruby-1.9.3-p194/bin ~/.rvm/bin $PATH
+set -x PATH /usr/local/rvm/bin $PATH
 
 # Fish
 set -x PATH /usr/local/Cellar/fishfish/OpenBeta_r2/bin $PATH
