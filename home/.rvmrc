@@ -1,0 +1,3 @@
+umask g+w
+export -a rvm_configure_env
+rvm_configure_env=('LDFLAGS=-L/opt/sm/pkg/active/lib' 'CFLAGS=-I/opt/sm/pkg/active/include' 'CPATH=/opt/sm/pkg/active/include')
