@@ -20,6 +20,9 @@ Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'dwm.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'majutsushi/tagbar'
+Bundle 'jdonaldson/vaxe'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
@@ -47,6 +50,9 @@ set completeopt=menu,menuone,longest
 "[PLUGINS']-------------------------------------------------------------------
 "Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+"Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 "[THEME]----------------------------------------------------------------------
 syntax on
