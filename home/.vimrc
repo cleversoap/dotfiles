@@ -49,13 +49,26 @@ set hlsearch
 set completeopt=menu,menuone,longest
 
 "[PLUGINS']-------------------------------------------------------------------
-"Powerline
+"[Powerline]
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-"Neocomplcache
+"[Neocomplcache]
+"Enable at startup
 let g:neocomplcache_enable_at_startup = 1
 
-"Taglist settings
+"Case completions
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
+"Filetype Specific Completions
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+"[Taglist]
 "Actionscript Taglist
 let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
 
