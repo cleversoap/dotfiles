@@ -20,6 +20,7 @@ Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'dwm.vim'
+Bundle 'taglist.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'jdonaldson/vaxe'
@@ -53,6 +54,10 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 "Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+"Taglist settings
+"Actionscript Taglist
+let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
 
 "[THEME]----------------------------------------------------------------------
 syntax on
