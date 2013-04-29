@@ -69,6 +69,9 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+"Automatically generate ctags on save
+au BufWritePost *.c,*.cpp,*.h,*.as,*.hx silent! !ctags -R &
+
 "[Taglist]
 "Actionscript Taglist
 let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
@@ -107,6 +110,9 @@ nnoremap <F5> :GundoToggle<CR>
 
 "FastSwitch for C-Types
 map <C-Up> :FSAbove<CR>
+
+"Tagbar
+map <S-F5> :TagbarToggle<CR>
 
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
