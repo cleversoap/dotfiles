@@ -29,22 +29,36 @@ set -x CLICOLOR 1
 # as not existing results in an error
 
 # Global paths that should ALWAYS exist
-set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+set -x PATH /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+if test -d /usr/local/sbin
+	set -x PATH /usr/local/sbin $PATH
+end
 
 # Autoconf
-set -x PATH /usr/local/share/aclocal $PATH
+if test -d /usr/local/share/aclocal
+	set -x PATH /usr/local/share/aclocal $PATH
+end
 
 # X11
-set -x PATH /usr/X11R6/bin /opt/X11/bin $PATH
+if test -d /usr/X11R6/bin and test -d /opt/X11/bin
+	set -x PATH /usr/X11R6/bin /opt/X11/bin $PATH
+end
 
 # Node executables
-set -x PATH /usr/local/share/npm/bin $PATH
+if test -d /usr/local/share/npm/bin
+	set -x PATH /usr/local/share/npm/bin $PATH
+end
 
 # Flex Compilers
-set -x PATH /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin $PATH
+if test -d /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin
+	set -x PATH /usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin $PATH
+end
 
 # Ruby (RVM and Gems)
-set -x PATH /usr/local/rvm/bin $PATH
+if test -d /usr/local/rvm/bin
+	set -x PATH /usr/local/rvm/bin $PATH
+end
 
 # Fish
 set -x PATH /usr/local/Cellar/fishfish/OpenBeta_r2/bin $PATH
