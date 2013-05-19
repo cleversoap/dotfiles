@@ -25,6 +25,7 @@ Bundle 'taglist.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'jdonaldson/vaxe'
+Bundle 'hallettj/jslint.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
