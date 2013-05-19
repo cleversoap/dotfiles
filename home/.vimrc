@@ -70,7 +70,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "Automatically generate ctags on save
-au BufWritePost *.c,*.cpp,*.h,*.as,*.hx silent! !ctags -R &
+au BufWritePost *.c,*.cpp,*.h,*.as,*.hx silent! !/usr/local/bin/ctags -R &
 
 "[Taglist]
 "Actionscript Taglist
@@ -113,6 +113,9 @@ map <C-Up> :FSAbove<CR>
 
 "Tagbar
 map <S-F5> :TagbarToggle<CR>
+
+"Ruby Check Syntax
+autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
 
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
