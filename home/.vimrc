@@ -69,9 +69,13 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType cpp set omnifunc=cppcomplete#Complete
 
 "Automatically generate ctags on save
-au BufWritePost *.c,*.cpp,*.h,*.as,*.hx silent! !/usr/local/bin/ctags -R &
+"of any file type; will need to see if I should put the filter back in
+au BufWritePost * silent! !/usr/local/bin/ctags -R &
 
 "[Taglist]
 "Actionscript Taglist
