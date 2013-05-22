@@ -92,10 +92,14 @@ endif
 set backspace=2
 
 "Tabs
+set expandtab
 set autoindent
 set copyindent
-set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+
+"Use tabs in makefiles
+autocmd FileType make setlocal noexpandtab
 
 "Undo / Redo
 noremap <C-Z> u
