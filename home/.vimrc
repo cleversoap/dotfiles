@@ -93,6 +93,7 @@ set backspace=2
 
 "Tabs
 set expandtab
+set smarttab
 set autoindent
 set copyindent
 set softtabstop=4
