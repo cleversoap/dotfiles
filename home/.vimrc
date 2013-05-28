@@ -26,6 +26,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'jdonaldson/vaxe'
 Bundle 'hallettj/jslint.vim'
+Bundle 'wting/gitsessions.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
@@ -75,7 +76,7 @@ autocmd FileType cpp set omnifunc=cppcomplete#Complete
 
 "Automatically generate ctags on save
 "of any file type; will need to see if I should put the filter back in
-au BufWritePost * silent! !/usr/local/bin/ctags -R &
+au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/local/bin/ctags -R &
 
 "[Taglist]
 "Actionscript Taglist
