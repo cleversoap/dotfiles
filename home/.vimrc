@@ -27,6 +27,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jdonaldson/vaxe'
 Bundle 'hallettj/jslint.vim'
 Bundle 'wting/gitsessions.vim'
+Bundle 'msanders/cocoa.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
