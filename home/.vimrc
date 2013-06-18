@@ -28,6 +28,7 @@ Bundle 'jdonaldson/vaxe'
 Bundle 'hallettj/jslint.vim'
 Bundle 'wting/gitsessions.vim'
 Bundle 'msanders/cocoa.vim'
+Bundle 'chrisbra/NrrwRgn'
 Bundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
