@@ -21,7 +21,6 @@ Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'dwm.vim'
-Bundle 'taglist.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'jdonaldson/vaxe'
@@ -80,9 +79,18 @@ autocmd FileType cpp set omnifunc=cppcomplete#Complete
 "of any file type; will need to see if I should put the filter back in
 au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/local/bin/ctags -R &
 
-"[Taglist]
-"Actionscript Taglist
-let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
+"[Tagbar]
+"Actionscript
+let g:tagbar_type_actionscript = {
+    \ 'ctagstype' : 'actionscript',
+    \ 'kinds'     : [
+        \ 'f:functions',
+        \ 'p:properties',
+        \ 'v:variables',
+        \ 'c:classes'
+        \ ]
+    \ }
+
 
 "[THEME]----------------------------------------------------------------------
 syntax on
