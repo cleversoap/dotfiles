@@ -84,10 +84,11 @@ au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/loc
 let g:tagbar_type_actionscript = {
     \ 'ctagstype' : 'actionscript',
     \ 'kinds'     : [
-        \ 'f:functions',
-        \ 'p:properties',
-        \ 'v:variables',
-        \ 'c:classes'
+        \ 'c:class',
+        \ 'C:constant',
+        \ 'v:variable',
+        \ 'p:property',
+        \ 'f:function'
         \ ]
     \ }
 
@@ -134,6 +135,9 @@ map <C-Up> :FSAbove<CR>
 
 "Tagbar
 map <S-F5> :TagbarToggle<CR>
+
+"CtrlP Tag Search
+nnoremap <S-P> :CtrlPTag<cr>
 
 "Ruby Check Syntax
 autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
