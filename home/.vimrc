@@ -144,6 +144,9 @@ set encoding=utf-8
 colorscheme Tomorrow-Night
 if has("gui_running")
 	set guifont=Menlo\ for\ Powerline
+	set guioptions-=m "No Menubar
+	set guioptions-=T "No Toolbar
+	set guioptions-=r "No scrollbar
 endif
 
 "[KEYS]-----------------------------------------------------------------------
