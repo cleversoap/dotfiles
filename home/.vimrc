@@ -173,6 +173,12 @@ nnoremap j gj
 nnoremap k gk
 
 "Tabs
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>w :tabclose<CR>
+nnoremap <leader>[ :tabprevious<CR>
+nnoremap <leader>] :tabnext<CR>
+
+"Tab Formatting
 set expandtab
 set smarttab
 set autoindent
