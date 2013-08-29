@@ -60,6 +60,9 @@ Bundle 'hallettj/jslint.vim'
 "ends of a file or changing of super class code.
 Bundle 'chrisbra/NrrwRgn'
 
+"Needed for C++ development as I use clang almost exclusively
+Bundle 'justmao945/vim-clang'
+
 "Needed to make vim look pretty, everybody else is doing it.
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/powerline-fonts'
