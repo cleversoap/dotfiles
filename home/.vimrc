@@ -63,6 +63,9 @@ Bundle 'chrisbra/NrrwRgn'
 "Needed for C++ development as I use clang almost exclusively
 Bundle 'justmao945/vim-clang'
 
+"Needed to resolve some completion issues
+Bundle 'ervandew/supertab'
+
 "Needed to make vim look pretty, everybody else is doing it.
 Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/powerline-fonts'
@@ -104,7 +107,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 "[Neocomplcache]
 "Enable at startup
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 0
 
 "Case completions
 let g:neocomplcache_enable_smart_case = 1
