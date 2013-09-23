@@ -3,73 +3,59 @@ set nocompatible
 filetype on
 filetype off
 
-"[VUNDLE]---------------------------------------------------------------------
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"[NEOBUNDLE]------------------------------------------------------------------
+if has('vim_starting')
+    set rtp+=~/.vim/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 "[BUNDLES]--------------------------------------------------------------------
 "Needed by other plugins that rely on git functionality rather than
 "being used for vim embedded git.
-Bundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 
 "Needed for working on larger projects with many directories, in particular
 "those that use the directory structure for namespacing (eg. AS3)
-Bundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 
 "Needed because not all changes are good changes and it fills the gap
 "between git commits.
-Bundle 'sjl/gundo.vim'
+NeoBundle 'sjl/gundo.vim'
 
 "Needed primarily for quick visual selection.
-Bundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 "Needed for occasionally useful file opening on start without sessions.
-Bundle 'mhinz/vim-startify'
+NeoBundle 'mhinz/vim-startify'
 
 "Needed primarily to quickly and cleanly align class members.
-Bundle 'godlygeek/tabular'
+NeoBundle 'godlygeek/tabular'
 
 "Needed for fast switching between header/implementation files without.
-Bundle 'derekwyatt/vim-fswitch'
+NeoBundle 'derekwyatt/vim-fswitch'
 
 "Needed primarily for opening files in large projects quickly. However, the
 "ctag integration is also helpful for override referencing.
-Bundle 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 
 "Needed for the time being, just lightweight syntax colours.
-Bundle 'jeroenbourgois/vim-actionscript'
+NeoBundle 'jeroenbourgois/vim-actionscript'
 
 "Needed for quick and easy window management that mimics my natural layout.
-Bundle 'dwm.vim'
-
-"Needed for the occasionally useful completion of non-tagged items.
-Bundle 'Shougo/neocomplcache'
+NeoBundle 'dwm.vim'
 
 "Needed primarily for a quick overview of file metadata. Custom ctags
 "integration make it extremely useful.
-Bundle 'majutsushi/tagbar'
-
-"Needed for HAXE development, primarily just for good syntax highlighting.
-Bundle 'jdonaldson/vaxe'
+NeoBundle 'majutsushi/tagbar'
 
 "Needed for javascript work that others will read and use.
-Bundle 'hallettj/jslint.vim'
-
-"Needed for the occasionally useful editing and comparison of code on opposite
-"ends of a file or changing of super class code.
-Bundle 'chrisbra/NrrwRgn'
-
-"Needed for C++ development as I use clang almost exclusively
-Bundle 'justmao945/vim-clang'
-
-"Needed to resolve some completion issues
-Bundle 'ervandew/supertab'
+NeoBundle 'hallettj/jslint.vim'
 
 "Needed to make vim look pretty, everybody else is doing it.
-Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/powerline-fonts'
-Bundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'Lokaltog/powerline'
+NeoBundle 'Lokaltog/powerline-fonts'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
 filetype plugin indent on
@@ -104,25 +90,6 @@ set tags=./tags;,tags;
 "[PLUGINS']-------------------------------------------------------------------
 "[Powerline]
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-"[Neocomplcache]
-"Enable at startup
-let g:neocomplcache_enable_at_startup = 0
-
-"Case completions
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-
-"Filetype Specific Completions
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType cpp set omnifunc=cppcomplete#Complete
 
 "Automatically generate ctags on save
 "of any file type; will need to see if I should put the filter back in
@@ -228,3 +195,6 @@ cmap w!! w !sudo tee % >/dev/null
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
 au BufRead,BufNewFile *.as set ft=actionscript"
+
+"Installation Check
+NeoBundleCheck
