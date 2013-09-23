@@ -57,7 +57,7 @@ NeoBundle 'hallettj/jslint.vim'
 "providing suggestions.
 NeoBundle 'Valloric/YouCompleteMe' , {
     \ 'build' : {
-    \   'mac' : './install.sh --clang-completer',
+    \   'mac' : './install.sh --clang-completer --system-libclang',
     \   'unix' : './install.sh --clang-completer'
     \ },
 \ }
