@@ -52,6 +52,16 @@ NeoBundle 'majutsushi/tagbar'
 "Needed for javascript work that others will read and use.
 NeoBundle 'hallettj/jslint.vim'
 
+"Needed for clang completion - I have reverted to using this all other
+"plugins, such as clang_complete and vim-clang, are simply too slow when
+"providing suggestions.
+NeoBundle 'Valloric/YouCompleteMe' , {
+    \ 'build' : {
+    \   'mac' : './install.sh --clang-completer',
+    \   'unix' : './install.sh --clang-completer'
+    \ },
+\ }
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'Lokaltog/powerline'
 NeoBundle 'Lokaltog/powerline-fonts'
