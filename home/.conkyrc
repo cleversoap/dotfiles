@@ -54,5 +54,5 @@ override_utf8_locale no
 #  Output
 ##############################################
 TEXT
-$mem
-${cpu cpu0}%
+#$mem
+#${cpu cpu0}%
