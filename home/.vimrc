@@ -131,6 +131,8 @@ if has("gui_running")
 	set guioptions-=T "No Toolbar
 	set guioptions-=r "No scrollbar
 endif
+"Transparent Background
+hi Normal ctermfg=255 ctermbg=none
 
 "[KEYS]-----------------------------------------------------------------------
 "Force correct navigation usage
