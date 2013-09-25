@@ -24,8 +24,8 @@ function conky_main()
     mem = conky_parse("${mem}")
     mem_perc = tonumber(conky_parse("${memperc}"))
 
-    cpu = cpu * 4
-    mem_perc = mem_perc * 4
+    cpu_perc = (cpu / 100) * 360
+    mem_perc = (mem_perc / 100) * 360
 
     -- MEM
     cairo_move_to(cr, 17, 35)
@@ -44,7 +44,7 @@ function conky_main()
     if cpu ~= nil then
         cairo_show_text(cr, cpu .. "%")
         cairo_stroke(cr)
-        cairo_arc(cr, 30, 80, 17, 0, cpu * (math.pi/180))
+        cairo_arc(cr, 30, 80, 17, 0, cpu_perc * (math.pi/180))
         cairo_stroke(cr)
     end
 
