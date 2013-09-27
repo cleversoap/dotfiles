@@ -3,11 +3,17 @@ require 'cairo'
 
 font = "Mono"
 font_size = 8
-text = "hello world"
-xpos,ypos = 27, 83
 red,green,blue,alpha=1,1,1,1
 font_slant = CAIRO_FONT_SLANT_NORMAL
 font_face = CAIRO_FONT_WEIGHT_NORMAL
+
+function draw_arc(cr, percent, x, y)
+    if percent ~= nil then
+        -- Arc
+        cairo_arc(cr, x, y, 22, 0, ((percent/100)*360) * (math.pi/180))
+        cairo_stroke(cr)
+    end
+end
 
 function conky_main()
     if conky_window == nil then return end
@@ -21,38 +27,12 @@ function conky_main()
 
     -- Vars
     cpu = tonumber(conky_parse("${cpu}"))
-    mem = conky_parse("${mem}")
     mem_perc = tonumber(conky_parse("${memperc}"))
 
-    cpu = cpu * 4
-    mem_perc = mem_perc * 4
+    draw_arc(cr, mem_perc, 30, 35)
+    draw_arc(cr, cpu, 30, 90)
 
-    -- MEM
-    cairo_move_to(cr, 17, 35)
-    if mem ~= nil and mem_perc ~= nil then
-        -- Amount
-        cairo_show_text(cr, mem)
-        cairo_stroke(cr)
-
-        -- Percent
-        cairo_arc(cr, 30, 32, 17, 0, mem_perc * (math.pi/180))
-        cairo_stroke(cr)
-    end
-
-    -- CPU
-    cairo_move_to(cr, 18, 83)
-    if cpu ~= nil then
-        cairo_show_text(cr, cpu .. "%")
-        cairo_stroke(cr)
-        cairo_arc(cr, 30, 80, 17, 0, cpu * (math.pi/180))
-        cairo_stroke(cr)
-    end
-
-    -- Debug Print
-    local updates = tonumber(conky_parse('${updates}'))
-    if updates > 1 then
-        print ("Hello World")
-    end
+    -- Cleanup
     cairo_destroy(cr)
     cairo_surface_destroy(cs)
     cr = nil
