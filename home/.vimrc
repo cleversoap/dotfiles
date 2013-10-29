@@ -10,6 +10,9 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+"Set the install timeout to an hour
+let g:neobundle#install_process_timeout = 3600
+
 "[BUNDLES]--------------------------------------------------------------------
 "Needed by other plugins that rely on git functionality rather than
 "being used for vim embedded git.
