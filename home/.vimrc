@@ -61,10 +61,13 @@ NeoBundle 'tikhomirov/vim-glsl'
 "Needed for clang completion - I have reverted to using this all other
 "plugins, such as clang_complete and vim-clang, are simply too slow when
 "providing suggestions.
-NeoBundle 'Valloric/YouCompleteMe' , {
+NeoBundleLazy 'Valloric/YouCompleteMe' , {
     \ 'build' : {
     \   'mac' : './install.sh --clang-completer --system-libclang',
     \   'unix' : './install.sh --clang-completer'
+    \ },
+    \ 'autoload' : {
+    \   'filetypes': ['cpp', 'c']
     \ },
 \ }
 
