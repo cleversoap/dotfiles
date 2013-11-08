@@ -3,6 +3,21 @@ set nocompatible
 filetype on
 filetype off
 
+"[OS]-------------------------------------------------------------------------
+function! GetRunningOS()
+    if has("win32")
+        return "win"
+    endif
+    if has("unix")
+        if system('uname')=~'Darwin'
+            return "mac"
+        else
+            return "linux"
+        endif
+    endif
+endfunction
+let os=GetRunningOS()
+
 "[NEOBUNDLE]------------------------------------------------------------------
 if has('vim_starting')
     set rtp+=~/.vim/bundle/neobundle.vim
@@ -61,15 +76,17 @@ NeoBundle 'tikhomirov/vim-glsl'
 "Needed for clang completion - I have reverted to using this all other
 "plugins, such as clang_complete and vim-clang, are simply too slow when
 "providing suggestions.
-NeoBundleLazy 'Valloric/YouCompleteMe' , {
-    \ 'build' : {
-    \   'mac' : './install.sh --clang-completer --system-libclang',
-    \   'unix' : './install.sh --clang-completer'
-    \ },
-    \ 'autoload' : {
-    \   'filetypes': ['cpp', 'c']
-    \ },
-\ }
+if os == 'unix'
+    NeoBundleLazy 'Valloric/YouCompleteMe' , {
+                \ 'build' : {
+                \   'mac' : './install.sh --clang-completer --system-libclang',
+                \   'unix' : './install.sh --clang-completer'
+                \ },
+                \ 'autoload' : {
+                \   'filetypes': ['cpp', 'c']
+                \ },
+                \ }
+endif
 
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'Lokaltog/powerline'
@@ -117,15 +134,15 @@ au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/loc
 "[Tagbar]
 "Actionscript
 let g:tagbar_type_actionscript = {
-    \ 'ctagstype' : 'actionscript',
-    \ 'kinds'     : [
-        \ 'c:class',
-        \ 'C:constant',
-        \ 'v:variable',
-        \ 'p:property',
-        \ 'f:function'
-        \ ]
-    \ }
+            \ 'ctagstype' : 'actionscript',
+            \ 'kinds'     : [
+            \ 'c:class',
+            \ 'C:constant',
+            \ 'v:variable',
+            \ 'p:property',
+            \ 'f:function'
+            \ ]
+            \ }
 
 
 "[THEME]----------------------------------------------------------------------
@@ -135,10 +152,10 @@ set background=dark
 set encoding=utf-8
 colorscheme Tomorrow-Night
 if has("gui_running")
-	set guifont=Menlo\ for\ Powerline
-	set guioptions-=m "No Menubar
-	set guioptions-=T "No Toolbar
-	set guioptions-=r "No scrollbar
+    set guifont=Menlo\ for\ Powerline
+    set guioptions-=m "No Menubar
+    set guioptions-=T "No Toolbar
+    set guioptions-=r "No scrollbar
 endif
 "Transparent Background
 hi Normal ctermfg=255 ctermbg=none
