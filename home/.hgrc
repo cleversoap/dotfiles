@@ -1,2 +1,7 @@
+[ui]
+# Name data to appear in commits
+username = cleversoap <clever@cleversoap.com>
+ssh = ssh -C
+
 [extensions]
 progress =
