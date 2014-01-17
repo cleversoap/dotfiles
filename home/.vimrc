@@ -73,6 +73,10 @@ NeoBundle 'hallettj/jslint.vim'
 "Needed for writing shaders
 NeoBundle 'tikhomirov/vim-glsl'
 
+"Needed for cleaner sudo writing and buffer moving that synchronises
+"with file moving.
+NeoBundle 'tpope/vim-eunuch'
+
 "Needed for clang completion - I have reverted to using this all other
 "plugins, such as clang_complete and vim-clang, are simply too slow when
 "providing suggestions.
@@ -152,7 +156,7 @@ set background=dark
 set encoding=utf-8
 colorscheme Tomorrow-Night
 if has("gui_running")
-    set guifont=Menlo\ for\ Powerline
+    set guifont=Anonymice\ Powerline
     set guioptions-=m "No Menubar
     set guioptions-=T "No Toolbar
     set guioptions-=r "No scrollbar
@@ -226,9 +230,6 @@ nnoremap <S-P> :CtrlPTag<cr>
 
 "Ruby Check Syntax
 autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
-
-"SUDO write a file (useful if accidentally opened without proper permissions)
-cmap w!! w !sudo tee % >/dev/null
 
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
