@@ -80,10 +80,9 @@ NeoBundle 'tpope/vim-eunuch'
 "Needed for clang completion - I have reverted to using this all other
 "plugins, such as clang_complete and vim-clang, are simply too slow when
 "providing suggestions.
-if os == 'unix'
+if os == 'linux'
     NeoBundleLazy 'Valloric/YouCompleteMe' , {
                 \ 'build' : {
-                \   'mac' : './install.sh --clang-completer --system-libclang',
                 \   'unix' : './install.sh --clang-completer'
                 \ },
                 \ 'autoload' : {
@@ -212,6 +211,9 @@ noremap <C-Z> u
 inoremap <C-Z> <C-O>u
 noremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
+
+"Format and return to current position
+nnoremap FF gg=G``
 
 "NerdTree
 noremap <F6> :NERDTreeToggle<CR>
