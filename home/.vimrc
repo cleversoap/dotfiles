@@ -77,6 +77,10 @@ NeoBundle 'tikhomirov/vim-glsl'
 "with file moving.
 NeoBundle 'tpope/vim-eunuch'
 
+"Needed for better completion as having to use ctrl+space is bothersome
+"in some configurations
+NeoBundle 'ervandew/supertab'
+
 "Needed for clang completion - I have reverted to using this all other
 "plugins, such as clang_complete and vim-clang, are simply too slow when
 "providing suggestions.
