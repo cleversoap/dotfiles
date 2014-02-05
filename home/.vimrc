@@ -33,10 +33,6 @@ let g:neobundle#install_process_timeout = 3600
 "being used for vim embedded git.
 NeoBundle 'tpope/vim-fugitive'
 
-"Needed for working on larger projects with many directories, in particular
-"those that use the directory structure for namespacing (eg. AS3)
-NeoBundle 'scrooloose/nerdtree'
-
 "Needed because not all changes are good changes and it fills the gap
 "between git commits.
 NeoBundle 'sjl/gundo.vim'
@@ -50,14 +46,15 @@ NeoBundle 'mhinz/vim-startify'
 "Needed primarily to quickly and cleanly align class members.
 NeoBundle 'godlygeek/tabular'
 
-"Needed for fast switching between header/implementation files without.
+"Needed for fast switching between header/implementation files quickly
+"rather than juggling buffers.
 NeoBundle 'derekwyatt/vim-fswitch'
 
 "Needed primarily for opening files in large projects quickly. However, the
 "ctag integration is also helpful for override referencing.
 NeoBundle 'kien/ctrlp.vim'
 
-"Needed for the time being, just lightweight syntax colours.
+"Needed for AS3 development - just lightweight syntax colours.
 NeoBundle 'jeroenbourgois/vim-actionscript'
 
 "Needed for quick and easy window management that mimics my natural layout.
@@ -74,30 +71,15 @@ NeoBundle 'hallettj/jslint.vim'
 NeoBundle 'tikhomirov/vim-glsl'
 
 "Needed for cleaner sudo writing and buffer moving that synchronises
-"with file moving.
+"with file moving. Replaced a keymapping just for sudo writing.
 NeoBundle 'tpope/vim-eunuch'
 
 "Needed for better completion as having to use ctrl+space is bothersome
 "in some configurations
 NeoBundle 'ervandew/supertab'
 
-"Needed for clang completion - I have reverted to using this all other
-"plugins, such as clang_complete and vim-clang, are simply too slow when
-"providing suggestions.
-if os == 'linux'
-    NeoBundleLazy 'Valloric/YouCompleteMe' , {
-                \ 'build' : {
-                \   'unix' : './install.sh --clang-completer'
-                \ },
-                \ 'autoload' : {
-                \   'filetypes': ['cpp', 'c']
-                \ },
-                \ }
-endif
-
 "Needed to make vim look pretty, everybody else is doing it.
-NeoBundle 'Lokaltog/powerline'
-NeoBundle 'Lokaltog/powerline-fonts'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 "[CONFIGURATION]--------------------------------------------------------------
@@ -131,8 +113,9 @@ set noswapfile
 set tags=./tags;,tags;
 
 "[PLUGINS']-------------------------------------------------------------------
-"[Powerline]
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"[Airline]
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 "Automatically generate ctags on save
 "of any file type; will need to see if I should put the filter back in
@@ -158,6 +141,7 @@ set t_Co=256
 set background=dark
 set encoding=utf-8
 colorscheme Tomorrow-Night
+let g:airline_theme='luna'
 if has("gui_running")
     set guifont=Anonymice\ Powerline
     set guioptions-=m "No Menubar
@@ -219,9 +203,6 @@ inoremap <C-Y> <C-O><C-R>
 "Format and return to current position
 nnoremap FF gg=G``
 
-"NerdTree
-noremap <F6> :NERDTreeToggle<CR>
-
 "GUndo
 nnoremap <F5> :GundoToggle<CR>
 
@@ -229,17 +210,14 @@ nnoremap <F5> :GundoToggle<CR>
 map <C-Up> :FSAbove<CR>
 
 "Tagbar
-map <S-F5> :TagbarToggle<CR>
+map <F6> :TagbarToggle<CR>
 
 "CtrlP Tag Search
 nnoremap <S-P> :CtrlPTag<cr>
 
-"Ruby Check Syntax
-autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
-
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
-au BufRead,BufNewFile *.as set ft=actionscript"
+au BufRead,BufNewFile *.as set ft=actionscript
 
 "Installation Check
 NeoBundleCheck
