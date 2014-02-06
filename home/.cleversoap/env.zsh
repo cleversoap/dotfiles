@@ -12,6 +12,7 @@ function clever_env {
         export $1:u_ROOT=$env_root
         export PATH=$env_root/bin:$PATH
         eval "$($1 init -)"
+        export ENV_PATH=$env_root:$ENV_PATH
         unset env_root
     fi
 }
@@ -22,7 +23,7 @@ function clever_env_update {
     eval "env_root=\$$1:u_ROOT"
     
     if [[ -d $env_root ]]; then
-        # Git update
+
     else
         echo "Unable to update $1 - cannot find $env_root"
     fi
@@ -40,6 +41,9 @@ clever_env pyenv
 
 # luanv
 clever_env luaenv
+
+# nodenv
+clever_env nodenv
 
 # jenv
 clever_env jenv

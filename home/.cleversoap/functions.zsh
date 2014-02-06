@@ -3,7 +3,7 @@
 # Runs a subshell in a directory that will evaluate a string of commands.
 function clever_exec_in {
     if [[ -d $1 ]]; then
-        (cd $1 && eval ${2})
+        zsh -c "cd $1 && eval ${2}"
     else
         echo "Unable to find $1"
     fi
@@ -18,13 +18,27 @@ function clever_repo_type {
     if [[ -d $dir ]]; then
 
         # git
-        echo $dir
-        (cd $dir && eval -- 'git rev-parse --is-in-working-tree')
-        #echo $(clever_exec_in $dir 'git rev-parse --is-in-working-tree')
+        if [[ $(clever_exec_in $dir 'git rev-parse --is-inside-work-tree 2> /dev/null') = 'true' ]]; then
+            echo 'git'
+            return 0
+        fi
 
         # mercurial
+        # NB: Tested with the cpython repo (mercurial) inside of pyenv (git)
+        # and it turned out that git was reported. May need additional
+        # logic to handle this edge case.
+        hg --cwd $dir root &> /dev/null
+        if [[ $? -eq 0 ]]; then
+            echo 'mercurial'
+            return 0
+        fi
 
         # subversion
+        svn info $dir &> /dev/null
+        if [[ $? -eq 0 ]]; then
+            echo 'subversion'
+            return 0
+        fi
 
         # Unknown
         return 1
