@@ -3,10 +3,23 @@
 # Runs a subshell in a directory that will evaluate a string of commands.
 function clever_exec_in {
     if [[ -d $1 ]]; then
-        zsh -c "cd $1 && eval ${2}"
+        (cd $1 && eval ${2})
     else
         echo "Unable to find $1"
     fi
+}
+
+# Takes a colon (:) delimited string of paths and executes a command
+# on each of them.
+function clever_exec_paths {
+
+    a=(${=${(s/:/)1}})
+    
+    for i in $a; do
+        echo clever_exec_in $i \'${2}\'
+        clever_exec_in $i ${2}
+    done
+
 }
 
 #-------------------------------------------------------------[ SOURCE CONTROL ]
@@ -41,6 +54,7 @@ function clever_repo_type {
         fi
 
         # Unknown
+        echo "unknown"
         return 1
         
     else
@@ -56,17 +70,14 @@ function clever_repo_update {
     case $(clever_repo_type $1) in
 
         "git")
-            echo "Updating a git repository"
             clever_exec_in $1 "git pull"
             ;;
 
         "mercurial")
-            echo "Updating a mercurial repository"
             clever_exec_in $1 "hg pull && hg update"
             ;;
 
         "subversion")
-            echo "Updating a subversion repository"
             clever_exec_in $1 "svn update"
             ;;
 
