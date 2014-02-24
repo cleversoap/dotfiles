@@ -64,9 +64,6 @@ NeoBundle 'dwm.vim'
 "integration make it extremely useful.
 NeoBundle 'majutsushi/tagbar'
 
-"Needed for javascript work that others will read and use.
-NeoBundle 'hallettj/jslint.vim'
-
 "Needed for writing shaders
 NeoBundle 'tikhomirov/vim-glsl'
 
