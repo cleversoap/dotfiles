@@ -75,6 +75,10 @@ NeoBundle 'tpope/vim-eunuch'
 "in some configurations
 NeoBundle 'ervandew/supertab'
 
+"Needed to fix some issues with Javascript indenting as cindent
+"doesn't really handle it well.
+NeoBundle 'vim-scripts/JavaScript-Indent'
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
