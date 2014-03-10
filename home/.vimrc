@@ -79,6 +79,9 @@ NeoBundle 'ervandew/supertab'
 "doesn't really handle it well.
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
+"Needed for helping me write cleaner code with certain linters (eg. jslint)
+NeoBundle 'scrooloose/syntastic'
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
@@ -134,6 +137,12 @@ let g:tagbar_type_actionscript = {
             \ 'f:function'
             \ ]
             \ }
+
+"[Syntastic]
+"General
+let g:syntastic_auto_loc_list=1
+"Javascript
+let g:syntastic_javascript_checkers = ['jshint']
 
 
 "[THEME]----------------------------------------------------------------------

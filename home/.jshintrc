@@ -1,0 +1,9 @@
+{
+    "browser": true,
+    "devel": true,
+
+    "white": true,
+    "indent": 4,
+    "strict": true,
+    "undef": true
+}
