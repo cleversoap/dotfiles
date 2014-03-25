@@ -1,6 +1,7 @@
 {
     "browser": true,
     "devel": true,
+    "node": true,
 
     "white": true,
     "indent": 4,
