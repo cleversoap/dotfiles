@@ -6,5 +6,7 @@
     "white": true,
     "indent": 4,
     "strict": true,
-    "undef": true
+    "undef": true,
+
+    "predef": ["define"]
 }
