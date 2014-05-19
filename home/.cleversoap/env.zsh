@@ -12,7 +12,7 @@ function clever_env {
     if [[ -d $HOME/.$1 ]]; then
 
         local env_root=$HOME/.$1
-        export $1:u_ROOT=$env_root
+        export ${1:u}_ROOT=$env_root
         export PATH=$env_root/bin:$PATH
         eval "$($1 init -)"
         export ENV_PATH=$env_root:$ENV_PATH

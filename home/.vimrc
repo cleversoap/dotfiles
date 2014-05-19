@@ -157,6 +157,7 @@ if has("gui_running")
     set guioptions-=m "No Menubar
     set guioptions-=T "No Toolbar
     set guioptions-=r "No scrollbar
+    set guioptions-=L "No scrollbar... again
 endif
 "Transparent Background
 hi Normal ctermfg=255 ctermbg=none
