@@ -79,6 +79,10 @@ NeoBundle 'ervandew/supertab'
 "doesn't really handle it well.
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
+"Needed to edit haxe / nme / lime et al files
+"and provides some convenience for project management and autocomplete
+NeoBundle 'jdonaldson/vaxe'
+
 "Needed for helping me write cleaner code with certain linters (eg. jslint)
 NeoBundle 'scrooloose/syntastic'
 
