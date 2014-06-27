@@ -157,7 +157,7 @@ set encoding=utf-8
 colorscheme Tomorrow-Night
 let g:airline_theme='luna'
 if has("gui_running")
-    set guifont=Ubuntu\ Mono
+    set guifont=ProggyCleanTT\ 12
     set guioptions-=m "No Menubar
     set guioptions-=T "No Toolbar
     set guioptions-=r "No scrollbar
