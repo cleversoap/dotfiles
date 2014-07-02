@@ -127,7 +127,7 @@ let g:airline_right_sep=''
 
 "Automatically generate ctags on save
 "of any file type; will need to see if I should put the filter back in
-au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/local/bin/ctags -R &
+"au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/bin/env ctags -R &
 
 "[Tagbar]
 "Actionscript
