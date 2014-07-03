@@ -5,3 +5,4 @@ ssh = ssh -C
 
 [extensions]
 progress =
+strip =

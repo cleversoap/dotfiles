@@ -60,3 +60,6 @@ clever_env nodenv node-build
 
 # jenv
 clever_env jenv
+
+# Setup haxe
+export HAXE_STD_PATH=/usr/local/lib/haxe/std
