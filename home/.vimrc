@@ -83,6 +83,9 @@ NeoBundle 'vim-scripts/JavaScript-Indent'
 "and provides some convenience for project management and autocomplete
 NeoBundle 'jdonaldson/vaxe'
 
+"Needed to edit golang
+NeoBundle 'fatih/vim-go'
+
 "Needed for helping me write cleaner code with certain linters (eg. jslint)
 NeoBundle 'scrooloose/syntastic'
 
@@ -147,6 +150,11 @@ let g:tagbar_type_actionscript = {
 let g:syntastic_auto_loc_list=1
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
+
+"[vim-go]
+"Disable the gofmt error on save as it is annoying
+let g:go_fmt_fail_silently=1
+let g:go_fmt_autosave = 0
 
 
 "[THEME]----------------------------------------------------------------------
