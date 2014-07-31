@@ -58,7 +58,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'jeroenbourgois/vim-actionscript'
 
 "Needed for quick and easy window management that mimics my natural layout.
-NeoBundle 'dwm.vim'
+NeoBundle 'spolu/dwm.vim'
 
 "Needed primarily for a quick overview of file metadata. Custom ctags
 "integration make it extremely useful.
