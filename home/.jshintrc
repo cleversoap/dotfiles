@@ -8,5 +8,5 @@
     "strict": true,
     "undef": true,
 
-    "predef": ["define"]
+    "predef": ["define","has"]
 }
