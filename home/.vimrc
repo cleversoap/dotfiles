@@ -79,6 +79,9 @@ NeoBundle 'ervandew/supertab'
 "doesn't really handle it well.
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
+"Needed for gradle build scripts
+NeoBundle 'tfnico/vim-gradle'
+
 "Needed to edit haxe / nme / lime et al files
 "and provides some convenience for project management and autocomplete
 NeoBundle 'jdonaldson/vaxe'
@@ -155,6 +158,11 @@ let g:syntastic_javascript_checkers = ['jshint']
 "Disable the gofmt error on save as it is annoying
 let g:go_fmt_fail_silently=1
 let g:go_fmt_autosave = 0
+
+"[ctrlp]
+"Disable searching node_modules directory
+"This uses the global wildignore rather than ctrlp_custom_ignore
+set wildignore+=*/node_modules/*
 
 
 "[THEME]----------------------------------------------------------------------
