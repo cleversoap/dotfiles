@@ -46,6 +46,9 @@ NeoBundle 'mhinz/vim-startify'
 "Needed primarily to quickly and cleanly align class members.
 NeoBundle 'godlygeek/tabular'
 
+"Needed for aligning more complex values
+NeoBundle 'junegunn/vim-easy-align'
+
 "Needed for fast switching between header/implementation files quickly
 "rather than juggling buffers.
 NeoBundle 'derekwyatt/vim-fswitch'
@@ -248,6 +251,10 @@ map <F6> :TagbarToggle<CR>
 
 "CtrlP Tag Search
 nnoremap <S-P> :CtrlPTag<cr>
+
+"Easy-Align
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
 
 "[FILETYPES]------------------------------------------------------------------
 "Actionscript
