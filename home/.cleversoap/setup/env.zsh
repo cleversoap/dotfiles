@@ -11,7 +11,7 @@ fi
 # pyenv
 PYENV_VERSIONS=('2.7.6')
 if [ ! -d ~/.pyenv ]; then
-    git clone git://github.com/yyuu/pyenv.git .pyenv
+    git clone git://github.com/yyuu/pyenv.git ~/.pyenv
     mkdir ~/.pyenv/cache
 fi
 
