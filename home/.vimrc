@@ -22,7 +22,7 @@ let os=GetRunningOS()
 if has('vim_starting')
     set rtp+=~/.vim/bundle/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 "Set the install timeout to an hour
@@ -92,12 +92,17 @@ NeoBundle 'jdonaldson/vaxe'
 "Needed to edit golang
 NeoBundle 'fatih/vim-go'
 
+"Needed to edit rust
+NeoBundle 'wting/rust.vim'
+
 "Needed for helping me write cleaner code with certain linters (eg. jslint)
 NeoBundle 'scrooloose/syntastic'
 
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+
+call neobundle#end()
 
 "[CONFIGURATION]--------------------------------------------------------------
 filetype plugin indent on
