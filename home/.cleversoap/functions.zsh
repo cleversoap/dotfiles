@@ -89,3 +89,20 @@ function clever_repo_update {
     esac
 
 }
+
+#----------------------------------------------------------------------[ UTILS ]
+
+function clever_app {
+
+    if [[ -a "$2" ]]; then
+        echo "$2 already exists"
+        return 1
+    fi
+
+    APPBIN=$(basename "$1")
+
+    mkdir -p "$2/Contents/MacOS"
+    cp "$1" "$2/Contents/MacOS/$APPBIN"
+    chmod +x "$2/Contents/MacOS/$APPBIN"
+
+}
