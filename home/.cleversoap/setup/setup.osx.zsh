@@ -21,7 +21,6 @@ brew install autoconf
 brew install mercurial
 brew install sqlite
 brew cask install xquartz
-brew install haxe
 
 # Install envs
 source $HOME/.cleversoap/setup/env.zsh

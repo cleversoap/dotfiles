@@ -159,6 +159,9 @@ let g:tagbar_type_actionscript = {
 "[Syntastic]
 "General
 let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { "mode": "passive",
+            \ "active_filetypes": ["javascript", "json"],
+            \ "passive_filetypes": ["java"] }
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 
