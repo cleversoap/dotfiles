@@ -100,7 +100,8 @@ NeoBundle 'scrooloose/syntastic'
 
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'whatyouhide/vim-gotham'
 
 call neobundle#end()
 
@@ -181,7 +182,7 @@ syntax on
 set t_Co=256
 set background=dark
 set encoding=utf-8
-colorscheme Tomorrow-Night
+colorscheme gotham
 let g:airline_theme='luna'
 if has("gui_running")
     set guifont=ProggyCleanTT\ 12
