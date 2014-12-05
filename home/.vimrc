@@ -183,7 +183,6 @@ set t_Co=256
 set background=dark
 set encoding=utf-8
 colorscheme gotham
-let g:airline_theme='luna'
 if has("gui_running")
     set guifont=ProggyCleanTT\ 12
     if os == "mac"
