@@ -182,8 +182,8 @@ syntax on
 set t_Co=256
 set background=dark
 set encoding=utf-8
-colorscheme gotham
 if has("gui_running")
+    colorscheme gotham
     set guifont=ProggyCleanTT\ 12
     if os == "mac"
         set guifont=ProggyCleanTT:h16
@@ -192,6 +192,8 @@ if has("gui_running")
     set guioptions-=T "No Toolbar
     set guioptions-=r "No scrollbar
     set guioptions-=L "No scrollbar... again
+else
+    colorscheme gotham256
 endif
 "Transparent Background
 hi Normal ctermfg=255 ctermbg=none
