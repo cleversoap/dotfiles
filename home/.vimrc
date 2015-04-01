@@ -98,6 +98,9 @@ NeoBundle 'wting/rust.vim'
 "Needed for helping me write cleaner code with certain linters (eg. jslint)
 NeoBundle 'scrooloose/syntastic'
 
+"Needed to quickly fix trailing whitespace
+NeoBundle 'bronson/vim-trailing-whitespace'
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
 "NeoBundle 'chriskempson/vim-tomorrow-theme'
