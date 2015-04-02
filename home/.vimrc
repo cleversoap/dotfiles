@@ -1,9 +1,11 @@
-"[INITIALISE]-----------------------------------------------------------------
+"-----------------------------------------------------------------------[ INIT ]
+
 set nocompatible
 filetype on
 filetype off
 
-"[OS]-------------------------------------------------------------------------
+"-------------------------------------------------------------------------[ OS ]
+
 function! GetRunningOS()
     if has("win32")
         return "win"
@@ -18,7 +20,8 @@ function! GetRunningOS()
 endfunction
 let os=GetRunningOS()
 
-"[NEOBUNDLE]------------------------------------------------------------------
+"------------------------------------------------------------------[ NEOBUNDLE ]
+
 if has('vim_starting')
     set rtp+=~/.vim/bundle/neobundle.vim
 endif
@@ -28,7 +31,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "Set the install timeout to an hour
 let g:neobundle#install_process_timeout = 3600
 
-"[BUNDLES]--------------------------------------------------------------------
+"--------------------------------------------------------------------{ BUNDLES }
+
 "Needed by other plugins that rely on git functionality rather than
 "being used for vim embedded git.
 NeoBundle 'tpope/vim-fugitive'
@@ -101,14 +105,24 @@ NeoBundle 'scrooloose/syntastic'
 "Needed to quickly fix trailing whitespace
 NeoBundle 'bronson/vim-trailing-whitespace'
 
+"Needed for python development
+NeoBundleLazy 'davidhalter/jedi-vim', {
+            \   'autoload' : {
+            \       'filetypes' : ['python', 'python3'],
+            \    },
+            \   'build' : {
+            \       'others': 'git submodule update --init'
+            \   }
+            \ }
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
-"NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'whatyouhide/vim-gotham'
 
 call neobundle#end()
 
-"[CONFIGURATION]--------------------------------------------------------------
+"--------------------------------------------------------------[ CONFIGURATION ]
+
 filetype plugin indent on
 
 "Show line numbers
@@ -138,16 +152,13 @@ set noswapfile
 "Tagfile location, go up in directories until a tag file is found.
 set tags=./tags;,tags;
 
-"[PLUGINS']-------------------------------------------------------------------
-"[Airline]
+"--------------------------------------------------------------------{ AIRLINE }
+
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-"Automatically generate ctags on save
-"of any file type; will need to see if I should put the filter back in
-"au BufWritePost *.hx, *.as, *.c, *.cpp, *.h, *.hpp, *.py, *.js silent! !/usr/bin/env ctags -R &
+"---------------------------------------------------------------------{ TAGBAR }
 
-"[Tagbar]
 "Actionscript
 let g:tagbar_type_actionscript = {
             \ 'ctagstype' : 'actionscript',
@@ -160,7 +171,8 @@ let g:tagbar_type_actionscript = {
             \ ]
             \ }
 
-"[Syntastic]
+"------------------------------------------------------------------{ SYNTASTIC }
+
 "General
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "passive",
@@ -169,18 +181,32 @@ let g:syntastic_mode_map = { "mode": "passive",
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 
-"[vim-go]
+"---------------------------------------------------------------------{ VIM-GO }
+
 "Disable the gofmt error on save as it is annoying
 let g:go_fmt_fail_silently=1
 let g:go_fmt_autosave = 0
 
-"[ctrlp]
+"----------------------------------------------------------------------{ CTRLP }
+
 "Disable searching node_modules directory
 "This uses the global wildignore rather than ctrlp_custom_ignore
 set wildignore+=*/node_modules/*
 
+"-----------------------------------------------------------------------{ JEDI }
 
-"[THEME]----------------------------------------------------------------------
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#rename_command = '<leader>r'
+let g:jedi#popup_select_first = 1
+let g:jedi#completions_command = '<Tab>'
+
+"autocmd MyAutoCmd FileType python*
+"            \ NeoBundleSource jedi-vim | let b:did_ftplugin = 1
+"let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
+
+"----------------------------------------------------------------------[ THEME ]
+
 syntax on
 set t_Co=256
 set background=dark
@@ -201,7 +227,8 @@ endif
 "Transparent Background
 hi Normal ctermfg=255 ctermbg=none
 
-"[KEYS]-----------------------------------------------------------------------
+"---------------------------------------------------------------[ KEY BINDINGS ]
+
 "Force correct navigation usage
 map <up> <nop>
 map <down> <nop>
@@ -269,9 +296,12 @@ nnoremap <S-P> :CtrlPTag<cr>
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
-"[FILETYPES]------------------------------------------------------------------
+"------------------------------------------------------------------[ FILETYPES ]
+
 "Actionscript
 au BufRead,BufNewFile *.as set ft=actionscript
+
+"-----------------------------------------------------------------------[ MISC ]
 
 "Installation Check
 NeoBundleCheck
