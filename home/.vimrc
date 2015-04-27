@@ -176,10 +176,13 @@ let g:tagbar_type_actionscript = {
 "General
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "passive",
-            \ "active_filetypes": ["javascript", "json"],
+            \ "active_filetypes": ["javascript", "json", "python"],
             \ "passive_filetypes": ["java"] }
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
+
+"Python
+let g:syntastic_python_checkers = ['flake8']
 
 "---------------------------------------------------------------------{ VIM-GO }
 
