@@ -105,6 +105,13 @@ NeoBundle 'scrooloose/syntastic'
 "Needed to quickly fix trailing whitespace
 NeoBundle 'bronson/vim-trailing-whitespace'
 
+"Needed to handle virtualenvs in python files
+NeoBundle 'jmcantrell/vim-virtualenv', {
+            \   'autoload' : {
+            \       'filetypes' : ['python', 'python3']
+            \   }
+            \ }
+
 "Needed for python development
 NeoBundleLazy 'davidhalter/jedi-vim', {
             \   'autoload' : {
