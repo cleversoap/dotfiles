@@ -223,10 +223,22 @@ set background=dark
 set encoding=utf-8
 if has("gui_running")
     colorscheme gotham
-    set guifont=ProggyCleanTT\ 12
-    if os == "mac"
-        set guifont=ProggyCleanTT:h16
-    endif
+    try
+        if has("gui_gtk2")
+            set guifont=ProggyCleanTT\ 12
+        elseif has("x11")
+            try
+                set guifont=-*-proggy-*
+            catch
+                set guifont=fixed
+            endtry
+        endif
+        if os == "mac"
+            set guifont=ProggyCleanTT:h16
+        endif
+    catch
+        set guifont=courier
+    endtry
     set guioptions-=m "No Menubar
     set guioptions-=T "No Toolbar
     set guioptions-=r "No scrollbar
