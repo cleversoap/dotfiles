@@ -77,7 +77,7 @@ function _zsh_ruby_status {
 }
 
 function _zsh_java_status {
-    echo -n "%{$fg[blue]%}☕ $(_zsh_java_version)%{$reset_color%}"
+    echo -n "%{$fg[blue]%}☕  $(_zsh_java_version)%{$reset_color%}"
 }
 
 local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
