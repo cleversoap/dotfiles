@@ -1,6 +1,6 @@
 function my_git_prompt() {
   tester=$(git rev-parse --git-dir 2> /dev/null) || return
-  
+
   INDEX=$(git status --porcelain 2> /dev/null)
   STATUS=""
 
@@ -46,6 +46,40 @@ function ssh_connection() {
   fi
 }
 
+# Runtime versions
+function _zsh_python_version {
+    python -V 2>&1 | sed -e 's/Python //'
+}
+
+function _zsh_node_version {
+    node --version | sed 's/v//g'
+}
+
+function _zsh_ruby_version {
+    ruby --version | grep -o "ruby \([0-9]\.*\)\{1,3\}" --color=never | sed 's/ruby //g'
+}
+
+function _zsh_java_version {
+    java -version 2>&1 | grep -o 'version "[^"-]*' --color=never | sed 's/version "//g; s/.0_/u/g'
+}
+
+# Runtime status lines
+function _zsh_python_status {
+    echo -n "%{$fg[yellow]%}$(basename $VIRTUAL_ENV 2>/dev/null) ⚕ $(_zsh_python_version)%{$reset_color%}"
+}
+
+function _zsh_node_status {
+    echo -n "%{$fg[green]%}⬡ $(_zsh_node_version)%{$reset_color%}"
+}
+
+function _zsh_ruby_status {
+    echo -n "%{$fg[red]%}♦ $(_zsh_ruby_version)%{$reset_color%}"
+}
+
+function _zsh_java_status {
+    echo -n "%{$fg[blue]%}☕ $(_zsh_java_version)%{$reset_color%}"
+}
+
 local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
 PROMPT=$'\n$(ssh_connection)%{$fg_bold[green]%}%n@%m%{$reset_color%}$(my_git_prompt) : %~\n[${ret_status}] λ '
 
@@ -57,3 +91,5 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[red]%}●"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[white]%}●"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✕"
 ZSH_THEME_GIT_PROMPT_SUFFIX=" $fg_bold[white]›%{$reset_color%}"
+
+RPROMPT='$(_zsh_python_status) $(_zsh_node_status) $(_zsh_ruby_status) $(_zsh_java_status)'
