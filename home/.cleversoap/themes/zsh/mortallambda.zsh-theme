@@ -80,8 +80,10 @@ function _zsh_java_status {
     echo -n "%{$fg[blue]%}☕  $(_zsh_java_version)%{$reset_color%}"
 }
 
+ENVPROMPT='$(_zsh_python_status) $(_zsh_node_status) $(_zsh_ruby_status) $(_zsh_java_status)'
+
 local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})%?%{$reset_color%}"
-PROMPT=$'\n$(ssh_connection)%{$fg_bold[green]%}%n@%m%{$reset_color%}$(my_git_prompt) : %~\n[${ret_status}] λ '
+LINEPROMPT=$'\n$(ssh_connection)%{$fg_bold[green]%}%n@%m%{$reset_color%}$(my_git_prompt) : %~\n[${ret_status}]'
 
 ZSH_THEME_PROMPT_RETURNCODE_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_PREFIX=" $fg[white]‹ %{$fg_bold[yellow]%}"
@@ -92,4 +94,15 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[white]%}●"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✕"
 ZSH_THEME_GIT_PROMPT_SUFFIX=" $fg_bold[white]›%{$reset_color%}"
 
-RPROMPT='$(_zsh_python_status) $(_zsh_node_status) $(_zsh_ruby_status) $(_zsh_java_status)'
+local ZSH_THEME_VIM_NORMAL="%{$fg[green]%}λ%{$reset_color%}"
+local ZSH_THEME_VIM_INSERT="%{$fg[yellow]%}Δ%{$reset_color%}"
+
+# Input mode dependent prompt
+function zle-line-init zle-keymap-select {
+    PROMPT="${LINEPROMPT} ${${KEYMAP/vicmd/${ZSH_THEME_VIM_NORMAL}}/(main|viins)/${ZSH_THEME_VIM_INSERT}} "
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+RPROMPT="${ENVPROMPT}"
