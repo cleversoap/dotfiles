@@ -8,19 +8,21 @@ function clever_exec_in {
         echo "Unable to find $1"
     fi
 }
+export  clever_exec_in
 
 # Takes a colon (:) delimited string of paths and executes a command
 # on each of them.
 function clever_exec_paths {
 
     a=(${=${(s/:/)1}})
-    
+
     for i in $a; do
         echo clever_exec_in $i \'${2}\'
         clever_exec_in $i ${2}
     done
 
 }
+export  clever_exec_paths
 
 #-------------------------------------------------------------[ SOURCE CONTROL ]
 
@@ -56,12 +58,13 @@ function clever_repo_type {
         # Unknown
         echo "unknown"
         return 1
-        
+
     else
         echo "Unable to find $dir"
         return 1
     fi
 }
+export  clever_repo_type
 
 # This function will perform an update of a repository in a directory
 # regardless of the type of repository it is
@@ -89,6 +92,7 @@ function clever_repo_update {
     esac
 
 }
+export clever_repo_update
 
 #----------------------------------------------------------------------[ UTILS ]
 
@@ -106,3 +110,4 @@ function clever_app {
     chmod +x "$2/Contents/MacOS/$APPBIN"
 
 }
+export  clever_app

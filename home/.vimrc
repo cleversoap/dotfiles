@@ -122,6 +122,15 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
             \   }
             \ }
 
+"Needed for coffeescript development
+NeoBundle 'kchmck/vim-coffee-script', {
+            \   'autoload' : {
+            \       'filetypes' : ['coffee', 'litecoffee', 'coffeescript']
+            \   }
+            \ }
+
+
+
 "Needed to make vim look pretty, everybody else is doing it.
 NeoBundle 'bling/vim-airline'
 NeoBundle 'whatyouhide/vim-gotham'
@@ -214,6 +223,11 @@ let g:jedi#completions_command = '<Tab>'
 "autocmd MyAutoCmd FileType python*
 "            \ NeoBundleSource jedi-vim | let b:did_ftplugin = 1
 "let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
+
+"-----------------------------------------------------------------{ VIRTUALENV }
+
+let g:pymode_virtualenv = 1
+let g:virtualenv_directory = "~/.pyenv/versions"
 
 "----------------------------------------------------------------------[ THEME ]
 
