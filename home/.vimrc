@@ -105,6 +105,9 @@ NeoBundle 'scrooloose/syntastic'
 "Needed to quickly fix trailing whitespace
 NeoBundle 'bronson/vim-trailing-whitespace'
 
+"Needed for Javascript autocompletion
+NeoBundle 'ternjs/tern_for_vim'
+
 "Needed to handle virtualenvs in python files
 NeoBundle 'jmcantrell/vim-virtualenv', {
             \   'autoload' : {
@@ -196,6 +199,9 @@ let g:syntastic_mode_map = { "mode": "passive",
             \ "passive_filetypes": ["java"] }
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
+autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['jshint']
+autocmd FileType javascript let b:syntastic_javascript_eslint_args = '--quiet'
+
 
 "Python
 let g:syntastic_python_checkers = ['flake8']
