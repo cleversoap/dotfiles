@@ -86,6 +86,9 @@ NeoBundle 'ervandew/supertab'
 "doesn't really handle it well.
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
+"Needed to support JSX for react development
+NeoBundle 'mxw/vim-jsx'
+
 "Needed for gradle build scripts
 NeoBundle 'tfnico/vim-gradle'
 
@@ -129,6 +132,12 @@ NeoBundle 'kchmck/vim-coffee-script', {
             \   }
             \ }
 
+"Needed for jade development
+NeoBundle 'digitaltoad/vim-jade', {
+            \   'autoload' : {
+            \       'filetypes' : ['jade']
+            \   }
+            \ }
 
 
 "Needed to make vim look pretty, everybody else is doing it.
@@ -172,6 +181,11 @@ set tags=./tags;,tags;
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
+"------------------------------------------------------------------------{ JSX }
+
+"Allow JSX in normal JS files
+let g:jsx_ext_required = 0
 
 "---------------------------------------------------------------------{ TAGBAR }
 
