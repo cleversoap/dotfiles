@@ -171,6 +171,9 @@ set noswapfile
 "Tagfile location, go up in directories until a tag file is found.
 set tags=./tags;,tags;
 
+"-------------------------------------------------------------------{ SUPERTAB }
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
 "--------------------------------------------------------------------{ AIRLINE }
 
 let g:airline_left_sep=''
@@ -197,11 +200,11 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "passive",
             \ "active_filetypes": ["javascript", "json", "python"],
             \ "passive_filetypes": ["java"] }
+
 "Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['jshint']
 autocmd FileType javascript let b:syntastic_javascript_eslint_args = '--quiet'
-
 
 "Python
 let g:syntastic_python_checkers = ['flake8']
