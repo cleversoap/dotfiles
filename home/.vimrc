@@ -86,6 +86,9 @@ NeoBundle 'ervandew/supertab'
 "doesn't really handle it well.
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
+"More Javascript fixes
+NeoBundle 'pangloss/vim-javascript'
+
 "Needed to support JSX for react development
 NeoBundle 'mxw/vim-jsx'
 
@@ -190,8 +193,8 @@ let g:airline_right_sep=''
 
 "------------------------------------------------------------------------{ JSX }
 
-"Allow JSX in normal JS files
-let g:jsx_ext_required = 0
+"Only .jsx files will register as jsx
+let g:jsx_ext_required = 1
 
 "---------------------------------------------------------------------{ TAGBAR }
 
