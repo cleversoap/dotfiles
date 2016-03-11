@@ -37,6 +37,9 @@ let g:neobundle#install_process_timeout = 3600
 "being used for vim embedded git.
 NeoBundle 'tpope/vim-fugitive'
 
+"Needed for script debugging
+NeoBundle 'tpope/vim-scriptease'
+
 "Needed because not all changes are good changes and it fills the gap
 "between git commits.
 NeoBundle 'sjl/gundo.vim'
@@ -219,9 +222,20 @@ let g:syntastic_mode_map = { "mode": "passive",
             \ "passive_filetypes": ["java"] }
 
 "Javascript
-let g:syntastic_javascript_checkers = ['jshint']
-autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['jshint']
+"First check for .eslintrc
+"If no .eslintrc is found then check for a package.json
+"if that package.json contains an eslintConfig then still
+"use eslint. A bit of DRY violation here that needs to be cleaned up
+if findfile('.eslintrc', '.;') != ''
+    let g:syntastic_javascript_checkers = ['eslint']
+endif
+
+let pkgjs = findfile('package.json', '.;')
+if pkgjs != '' && filereadable(pkgjs) && match(readfile(pkgjs), 'eslintConfig') != -1
+    let g:syntastic_javascript_checkers = ['eslint']
+endif
 autocmd FileType javascript let b:syntastic_javascript_eslint_args = '--quiet'
+
 
 "Python
 let g:syntastic_python_checkers = ['flake8']
