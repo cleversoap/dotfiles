@@ -186,7 +186,17 @@ set noswapfile
 "Tagfile location, go up in directories until a tag file is found.
 set tags=./tags;,tags;
 
+"-------------------------------------------------------------------{ STARTIFY }
+
+"Cowsay is dumb
+let g:startify_custom_header = []
+
+"Prevent the weird behaviour where startify will muck up ctrl-p buffers and
+"keep the tab around when searching
+let g:ctrlp_reuse_window = 'startify'
+
 "-------------------------------------------------------------------{ SUPERTAB }
+
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 "--------------------------------------------------------------------{ AIRLINE }
