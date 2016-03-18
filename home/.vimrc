@@ -141,10 +141,10 @@ NeoBundle 'kchmck/vim-coffee-script', {
             \   }
             \ }
 
-"Needed for jade development
-NeoBundle 'digitaltoad/vim-jade', {
+"Needed for pug development
+NeoBundle 'digitaltoad/vim-pug', {
             \   'autoload' : {
-            \       'filetypes' : ['jade']
+            \       'filetypes' : ['pug']
             \   }
             \ }
 
