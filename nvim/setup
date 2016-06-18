@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Create the config directory and stow init.vim
+CFG=$XDG_CONFIG_HOME/nvim
+mkdir -p $CFG
+stow . --target $CFG
+
+# Create a directory for the data and populate it with dein.vim
+BDR=$XDG_DATA_HOME/nvim/bundle/repos/github.com/Shougo
+if [ ! -d "$BDR" ]; then
+    mkdir -p $BDR
+    git clone https://github.com/Shougo/dein.vim.git $BDR/dein.vim
+fi
