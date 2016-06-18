@@ -2,6 +2,36 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 
+# ZGen
+# This needs to be in the home directory as it is technically honouring ZDOTDIR
+# which is not always going to reflect XDG specs
+export ZGEN_HOME="${HOME}/.zgen"
+
+source "${ZGEN_HOME}/zgen.zsh"
+
+if ! zgen saved; then
+    
+    # Base16 Colours
+    zgen load chriskempson/base16-shell
+
+    # Prezto
+    zgen prezto
+    zgen prezto git
+    zgen prezto command-not-found
+    zgen prezto syntax-highlighting
+
+    # Pure
+    zgen load mafredri/zsh-async
+    zgen load sindresorhus/pure
+
+    zgen save
+
+fi
+
 # Base16 Shell
-BASE16_SHELL=$XDG_CONFIG_HOME/base16-shell/base16-ocean.dark.sh
+BASE16_SHELL=$ZGEN_HOME/chriskempson/base16-shell-master/base16-ocean.dark.sh
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Setup prompt
+autoload -U promptinit && promptinit
+prompt pure

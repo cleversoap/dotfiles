@@ -4,6 +4,9 @@
 CFG=$XDG_CONFIG_HOME/zsh
 mkdir -p $CFG
 
+# Create the data directory for zgen and clone the zgen repo there
+git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+
 # Link with stow
 stow . --target $CFG
 
