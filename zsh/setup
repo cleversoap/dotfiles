@@ -4,12 +4,23 @@
 CFG=$XDG_CONFIG_HOME/zsh
 mkdir -p $CFG
 
+# Create the data directory for shell themes
+STD=$XDG_DATA_HOME/shell-themes
+mkdir -p $STD
+if [ ! -d $STD/base16 ]; then
+    git clone https://github.com/chriskempson/base16-shell.git $STD/base16
+fi
+
 # Create the data directory for zgen and clone the zgen repo there
-git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+if [ ! -d $HOME/.zgen ]; then
+    git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+fi
 
 # Link with stow
 stow . --target $CFG
 
 # ZSH isn't compliant with XDG (witout editing ZDOTDIR in /etc/zshenv) - for my
 # needs it's simpler to just link to where it expects
-ln -s $CFG/zshrc $HOME/.zshrc
+if [ ! -L $HOME/.zshrc ]; then
+    ln -s $CFG/zshrc $HOME/.zshrc
+fi

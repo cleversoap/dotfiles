@@ -7,29 +7,32 @@ export XDG_CACHE_HOME=$HOME/.cache
 # which is not always going to reflect XDG specs
 export ZGEN_HOME="${HOME}/.zgen"
 
+# CLV Script config
+export CLV_ROOT="${ZGEN_HOME}/cleversoap/clv-master"
+
 source "${ZGEN_HOME}/zgen.zsh"
 
 if ! zgen saved; then
     
-    # Base16 Colours
-    zgen load chriskempson/base16-shell
-
     # Prezto
     zgen prezto
     zgen prezto git
-    zgen prezto command-not-found
     zgen prezto syntax-highlighting
 
     # Pure
     zgen load mafredri/zsh-async
     zgen load sindresorhus/pure
 
+    # CLV
+    zgen load cleversoap/clv
+
+    # Save init.zsh for immediate startup next time
     zgen save
 
 fi
 
 # Base16 Shell
-BASE16_SHELL=$ZGEN_HOME/chriskempson/base16-shell-master/base16-ocean.dark.sh
+BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/base16-ocean.dark.sh
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Setup prompt
