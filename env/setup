@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Node
+nodenv_home=$ENV_HOME/nodenv
+if [ ! -d $nodenv_home ]; then
+    echo "Installing nodenv + node-build"
+    git clone https://github.com/nodenv/nodenv.git $nodenv_home 
+    git clone https://github.com/nodenv/node-build.git $nodenv_home/plugins/node-build
+    mkdir -p $nodenv_home/cache
+fi
+
+# Ruby
+rbenv_home=$ENV_HOME/rbenv
+if [ ! -d $rbenv_home ]; then
+    echo "Installing rbenv + ruby-build"
+    git clone https://github.com/sstephenson/rbenv.git $rbenv_home
+    git clone https://github.com/sstephenson/ruby-build.git $rbenv_home/plugins/ruby-build
+    mkdir -p $rbenv_home/cache
+fi
+
+# Python
+pyenv_home=$ENV_HOME/pyenv
+if [ ! -d $pyenv_home ]; then
+    echo "Installing pyenv + pyenv-virtualenv"
+    git clone https://github.com/yyuu/pyenv.git $pyenv_home
+    git clone https://github.com/yyuu/pyenv-virtualenv.git $pyenv_home/plugins/pyenv-virtualenv
+    mkdir -p $pyenv_home/cache
+fi

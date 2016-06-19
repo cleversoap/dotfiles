@@ -13,7 +13,7 @@ export CLV_ROOT="${ZGEN_HOME}/cleversoap/clv-master"
 source "${ZGEN_HOME}/zgen.zsh"
 
 if ! zgen saved; then
-    
+
     # Prezto
     zgen prezto
     zgen prezto git
@@ -34,6 +34,27 @@ fi
 # Base16 Shell
 BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/base16-ocean.dark.sh
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Setup environments
+export ENV_HOME="${XDG_DATA_HOME}/env"
+
+if [ -d $ENV_HOME ]; then
+    export CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
+
+    # Some plugins require extra init steps, they are checked for and added
+    cei_plugins=()
+
+    # If the pyenv-virtualenv plugin exists
+    if [ -d $ENV_HOME/pyenv/plugins/pyenv-virtualenv ]; then
+        cei_plugins+="pyenv virtualenv-init"
+    fi
+
+    # Call the plugin inits
+    export CLV_ENVS_INIT_PLUGINS=$cei_plugins
+
+    # Initialise all environments and plugins
+    clv env init
+fi
 
 # Setup prompt
 autoload -U promptinit && promptinit
