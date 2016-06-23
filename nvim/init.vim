@@ -24,6 +24,16 @@ call dein#add('Lokaltog/vim-easymotion')
 
 call dein#add('bling/vim-airline')
 
+call dein#add('ervandew/supertab')
+
+call dein#add('junegunn/vim-easy-align')
+
+call dein#add('ctrlpvim/ctrlp.vim')
+
+call dein#add('pangloss/vim-javascript')
+
+call dein#add('gavocanov/vim-js-indent')
+
 call dein#add('mhartington/oceanic-next')
 
 call dein#end()
@@ -68,6 +78,14 @@ set noswapfile
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='oceanicnext'
+
+"----------------------------------------------------------------------{ CTRLP }
+
+"This may not be the best way to ignore things
+set wildignore+=*/node_modules/*
+
+"Ignore anything not stored in git
+let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 "----------------------------------------------------------------------[ THEME ]
 
