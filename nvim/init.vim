@@ -32,7 +32,7 @@ call dein#add('ctrlpvim/ctrlp.vim')
 
 call dein#add('pangloss/vim-javascript')
 
-call dein#add('gavocanov/vim-js-indent')
+call dein#add('tpope/vim-eunuch')
 
 call dein#add('mhartington/oceanic-next')
 
@@ -86,6 +86,14 @@ set wildignore+=*/node_modules/*
 
 "Ignore anything not stored in git
 let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+"-------------------------------------------------------------{ VIM-JAVASCRIPT }
+
+let g:javascript_plugin_jsdoc = 1
+
+"-------------------------------------------------------------------{ SUPERTAB }
+
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 "----------------------------------------------------------------------[ THEME ]
 

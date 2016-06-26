@@ -26,3 +26,11 @@ if [ ! -d $pyenv_home ]; then
     git clone https://github.com/yyuu/pyenv-virtualenv.git $pyenv_home/plugins/pyenv-virtualenv
     mkdir -p $pyenv_home/cache
 fi
+
+# Java
+jenv_home=$ENV_HOME/jenv
+if [ ! -d $jenv_home ]; then
+    echo "Installing jenv"
+    git clone https://github.com/gcuisinier/jenv.git $jenv_home
+    mkdir -p $jenv_home/cache
+fi
