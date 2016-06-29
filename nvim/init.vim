@@ -34,6 +34,8 @@ call dein#add('pangloss/vim-javascript')
 
 call dein#add('tpope/vim-eunuch')
 
+call dein#add('digitaltoad/vim-pug')
+
 call dein#add('mhartington/oceanic-next')
 
 call dein#end()
