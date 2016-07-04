@@ -18,6 +18,7 @@ if ! zgen saved; then
     zgen prezto
     zgen prezto git
     zgen prezto syntax-highlighting
+    zgen prezto history-substring-search
 
     # Pure
     zgen load mafredri/zsh-async

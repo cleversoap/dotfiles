@@ -31,6 +31,7 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('ctrlpvim/ctrlp.vim')
 
 call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
 
 call dein#add('tpope/vim-eunuch')
 

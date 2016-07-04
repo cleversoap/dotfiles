@@ -119,9 +119,16 @@ bar {
 
 # ---------------------------------
 
-# Window borders
-client.focused      #FFFFFF #6495ED #FFFFFF
-client.unfocused    #343D46 #343D46 #999999
+# Colours           Border  BG      Font
+client.focused      #A3BE8C #2B303B #C0C5CE
+client.unfocused    #2b303B #2B303B #65737E
+
+# Borders
+for_window [class="^.*"] border pixel 5
+
+# Specific window classes
+for_window [class="^chromium$"] border pixel 0
+for_window [class="^termite$"] border pixel 10, title_format "%title"
 
 # Background
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/current -n
@@ -157,5 +164,8 @@ bindsym $mod+Down split v
 # Pulseaudio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+
+# Screenshots
+bindsym Print exec --no-startup-id scrot '$HOME/Pictures/Screenshots/%Y-%m-%d_%H%M%S.png' -e 'notify-send "scrot" "Screenshot saved as $n"'
 
 
