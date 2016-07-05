@@ -34,3 +34,12 @@ if [ ! -d $jenv_home ]; then
     git clone https://github.com/gcuisinier/jenv.git $jenv_home
     mkdir -p $jenv_home/cache
 fi
+
+# Lua
+luaenv_home=$ENV_HOME/luaenv
+if [ ! -d $luaenv_home ]; then
+    echo "Installing luaenv"
+    git clone https://github.com/cehoffman/luaenv.git $luaenv_home
+    git clone git://github.com/cehoffman/lua-build.git $luaenv_home/plugins/lua-build
+    mkdir -p $luaenv_home/cache
+fi

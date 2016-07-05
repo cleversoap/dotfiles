@@ -22,7 +22,7 @@ if ! zgen saved; then
     zgen prezto history-substring-search
 
     # Pure
-    #zgen load mafredri/zsh-async
+    zgen load mafredri/zsh-async
     zgen load sindresorhus/pure
 
     # CLV
@@ -34,7 +34,7 @@ if ! zgen saved; then
 fi
 
 # Base16 Shell
-BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/base16-ocean.dark.sh
+BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/scripts/base16-oceanicnext.sh
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Causes issues with globs in zgen
