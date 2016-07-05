@@ -12,6 +12,10 @@ export CLV_ROOT="${ZGEN_HOME}/cleversoap/clv-master"
 
 source "${ZGEN_HOME}/zgen.zsh"
 
+# Must be unset - causes errors with zgen globbing
+unsetopt extendedglob
+unsetopt nocaseglob
+
 if ! zgen saved; then
 
     # Prezto
@@ -31,6 +35,10 @@ if ! zgen saved; then
     zgen save
 
 fi
+
+# Must be unset - causes errors with zgen globbing
+unsetopt extendedglob
+unsetopt nocaseglob
 
 # Base16 Shell
 BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/base16-ocean.dark.sh
