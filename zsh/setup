@@ -24,3 +24,8 @@ stow . --target $CFG
 if [ ! -L $HOME/.zshrc ]; then
     ln -s $CFG/zshrc $HOME/.zshrc
 fi
+
+# Also link prezto
+if [ ! -L $HOME/.zpreztorc ]; then
+    ln -s $CFG/zpreztorc $HOME/.zpreztorc
+fi

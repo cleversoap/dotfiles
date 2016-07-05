@@ -12,20 +12,17 @@ export CLV_ROOT="${ZGEN_HOME}/cleversoap/clv-master"
 
 source "${ZGEN_HOME}/zgen.zsh"
 
-# Must be unset - causes errors with zgen globbing
-unsetopt extendedglob
-unsetopt nocaseglob
-
 if ! zgen saved; then
 
-    # Prezto
+    # Prezto - important to note that these must also be configured
+    # in ~/.zpreztorc otherwise zgen won't load them properly
     zgen prezto
     zgen prezto git
     zgen prezto syntax-highlighting
     zgen prezto history-substring-search
 
     # Pure
-    zgen load mafredri/zsh-async
+    #zgen load mafredri/zsh-async
     zgen load sindresorhus/pure
 
     # CLV
@@ -36,13 +33,13 @@ if ! zgen saved; then
 
 fi
 
-# Must be unset - causes errors with zgen globbing
-unsetopt extendedglob
-unsetopt nocaseglob
-
 # Base16 Shell
 BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/base16-ocean.dark.sh
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Causes issues with globs in zgen
+unsetopt nocaseglob
+unsetopt extendedglob
 
 # Setup environments
 export ENV_HOME="${XDG_DATA_HOME}/env"

@@ -1,0 +1,3 @@
+zstyle ':prezto:load' pmodule 'syntax-highlighting'
+zstyle ':prezto:module:syntax-highlighting' color 'yes'
+zstyle ':prezto:module:history-substring-search' color 'yes'
