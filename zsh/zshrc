@@ -41,6 +41,9 @@ BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/scripts/base16-oceanicnext.sh
 unsetopt nocaseglob
 unsetopt extendedglob
 
+# clv needs to be autoloaded
+autoload -U clv
+
 # Setup environments
 export ENV_HOME="${XDG_DATA_HOME}/env"
 
