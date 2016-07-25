@@ -30,6 +30,9 @@ call dein#add('junegunn/vim-easy-align')
 
 call dein#add('ctrlpvim/ctrlp.vim')
 
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('eagletmt/neco-ghc')
+
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 
@@ -93,6 +96,22 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 "-------------------------------------------------------------{ VIM-JAVASCRIPT }
 
 let g:javascript_plugin_jsdoc = 1
+
+"-------------------------------------------------------------------{ DEOPLETE }
+
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+if executable('ghc-mod')
+    let g:haskellmode_completion_ghc = 0
+    let g:necoghc_enable_detailed_browse = 1
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    "autocmd FileType haskell map <buffer> <leader>' :echo 'ghc-mod lint this-bloody-file' <CR>
+endif
 
 "-------------------------------------------------------------------{ SUPERTAB }
 
