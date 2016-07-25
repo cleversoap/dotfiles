@@ -71,3 +71,8 @@ fi
 # Setup prompt
 autoload -U promptinit && promptinit
 prompt pure
+
+# Handle shell titles - prints the user name and directory or directory
+# and currently running process in the title
+export precmd () { print -Pn "\e]2;%n | ${PWD##*/}\a" }
+precmd_functions+=precmd
