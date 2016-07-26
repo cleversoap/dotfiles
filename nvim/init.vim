@@ -18,6 +18,12 @@ call dein#add('Shougo/dein.vim')
 
 call dein#add('tpope/vim-fugitive')
 
+call dein#add('neomake/neomake')
+
+if executable('vint')
+    call dein#add('Kuniwak/vint')
+endif
+
 call dein#add('spolu/dwm.vim')
 
 call dein#add('Lokaltog/vim-easymotion')
@@ -31,7 +37,10 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('ctrlpvim/ctrlp.vim')
 
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('eagletmt/neco-ghc')
+
+if executable('ghc-mod')
+    call dein#add('eagletmt/neco-ghc')
+endif
 
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
@@ -97,6 +106,14 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 
 let g:javascript_plugin_jsdoc = 1
 
+"--------------------------------------------------------------------{ NEOMAKE }
+
+let g:neomake_place_signs = 1
+let g:neomake_open_list = 1
+let g:neomake_warning_sign = { 'text': '>', 'texthl': 'NeomakeWarningSignDefault' }
+let g:neomake_error_sign = { 'text': '>', 'texthl': 'NeomakeErrorSignDefault' }
+autocmd BufUnload * lclose
+
 "-------------------------------------------------------------------{ DEOPLETE }
 
 let g:deoplete#enable_at_startup = 1
@@ -104,13 +121,35 @@ if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#disable_auto_complete = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+augroup deoplete
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup END
+
+"------------------------------------------------------------------{ FILETYPES }
+
+"Quickfix
+augroup quickfix
+    autocmd FileType qf setlocal nonumber
+    autocmd FileType qf setlocal colorcolumn=
+augroup END
+
+"Haskell
 if executable('ghc-mod')
     let g:haskellmode_completion_ghc = 0
     let g:necoghc_enable_detailed_browse = 1
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-    "autocmd FileType haskell map <buffer> <leader>' :echo 'ghc-mod lint this-bloody-file' <CR>
+    augroup haskell
+        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "autocmd FileType haskell map <buffer> <leader>' :echo 'ghc-mod lint this-bloody-file' <CR>
+    augroup END
+endif
+
+"Vimscript
+if executable('vint')
+    let g:neomake_vim_enabled_makers = ['vint']
+    augroup neomake_vim
+        autocmd BufWritePost *.vim Neomake vint
+    augroup END
 endif
 
 "-------------------------------------------------------------------{ SUPERTAB }
@@ -166,7 +205,9 @@ set softtabstop=4
 set shiftwidth=4
 
 "Use tabs in makefiles
-autocmd FileType make setlocal noexpandtab
+augroup makefile
+    autocmd FileType make setlocal noexpandtab
+augroup END
 
 "Clear search highlights
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -179,3 +220,9 @@ inoremap <C-Y> <C-O><C-R>
 
 "Format and return to current position
 nnoremap FF gg=G``
+
+"List navigation
+nnoremap l] :lnext<CR>
+nnoremap l[ :lprevious<CR>
+nnoremap lo :lopen<CR>
+nnoremap lq :lclose<CR>
