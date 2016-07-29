@@ -45,6 +45,8 @@ endif
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 
+call dein#add('nathanaelkane/vim-indent-guides')
+
 call dein#add('tpope/vim-eunuch')
 
 call dein#add('digitaltoad/vim-pug')
@@ -155,6 +157,21 @@ endif
 "-------------------------------------------------------------------{ SUPERTAB }
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+"--------------------------------------------------------------{ INDENT-GUIDES }
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+let g:indent_guides_exclude_filetypes = ['help', 'vim', 'javascript', 'haskell']
+
+"Indent Guides cannot be enabled cleanly just for one buffer - it is global
+"and while I'm not a fan of this hack it's cleaner than trying to include
+"an ignore for ALL filetypes but the one I want.
+"augroup indents
+"    autocmd BufEnter * if &ft ==# 'sass' | IndentGuidesEnable | endif
+"    autocmd BufLeave * if &ft ==# 'sass' | IndentGuidesDisable | endif
+"augroup END
 
 "----------------------------------------------------------------------[ THEME ]
 
