@@ -48,7 +48,7 @@ unsetopt extendedglob
 # way to make certain it's loaded as zgen is unreliable in some environments
 # and the autoload won't always work on first call either
 # For example, calling `clv env init` doesn't actually trigger the autoload
-autoload -Uz clv && clv
+autoload -Uz clv
 
 # Setup environments
 export ENV_HOME="${XDG_DATA_HOME}/env"
