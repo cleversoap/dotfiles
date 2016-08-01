@@ -176,8 +176,13 @@ let g:indent_guides_exclude_filetypes = ['help', 'vim', 'javascript', 'haskell']
 "----------------------------------------------------------------------[ THEME ]
 
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme OceanicNext
+
+"Some terminals that don't properly report capabilities will fail rendering
+"the background with this (eg. Guake) as well as some themes that don't report
+"gui colours
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 set background=dark
 set encoding=utf-8
 
