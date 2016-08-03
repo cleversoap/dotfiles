@@ -107,6 +107,7 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 "-------------------------------------------------------------{ VIM-JAVASCRIPT }
 
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>\@!\||\|&\|in\%(stanceof\)\=\>\)\C'
 
 "--------------------------------------------------------------------{ NEOMAKE }
 
