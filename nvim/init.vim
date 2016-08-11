@@ -66,13 +66,13 @@ endif
 filetype plugin indent on
 
 "Show line numbers
-set nu
+set number
 
 "Column marker for 80 characters
-set cc=80
+set colorcolumn=80
 
 "Always show statusline
-set ls=2
+set laststatus=2
 
 "Show matching parens/brackets/etc...
 set showmatch
@@ -87,6 +87,13 @@ set completeopt=menu,menuone,longest
 "No backups or swap files
 set nobackup
 set noswapfile
+
+"Timeouts - this is in an effort to resolve an issue with certain keys
+"having a delay when entering normal mode from insert
+"eg. Leave Insert, Enter Normal, pressing h is quick, pressing l has a delay
+set esckeys
+set ttimeout
+set ttimeoutlen=0
 
 "--------------------------------------------------------------------[ PLUGINS ]
 
@@ -109,13 +116,19 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>\@!\||\|&\|in\%(stanceof\)\=\>\)\C'
 
+"--------------------------------------------------------------------{ VIM-JSX }
+
+let g:jsx_ext_required = 0
+
 "--------------------------------------------------------------------{ NEOMAKE }
 
 let g:neomake_place_signs = 1
 let g:neomake_open_list = 1
 let g:neomake_warning_sign = { 'text': '>', 'texthl': 'NeomakeWarningSignDefault' }
 let g:neomake_error_sign = { 'text': '>', 'texthl': 'NeomakeErrorSignDefault' }
-autocmd BufUnload * lclose
+augroup neomake
+    autocmd BufUnload * lclose
+augroup END
 
 "-------------------------------------------------------------------{ DEOPLETE }
 
@@ -157,7 +170,7 @@ endif
 
 "-------------------------------------------------------------------{ SUPERTAB }
 
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 "--------------------------------------------------------------{ INDENT-GUIDES }
 
@@ -203,7 +216,7 @@ nnoremap Q <nop>
 map q <nop>
 
 "Easier to reach leader
-let mapleader=","
+let g:mapleader = ','
 
 "Normalise backspace
 set backspace=2
