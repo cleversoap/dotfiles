@@ -20,9 +20,8 @@ call dein#add('tpope/vim-fugitive')
 
 call dein#add('neomake/neomake')
 
-if executable('vint')
-    call dein#add('Kuniwak/vint')
-endif
+"if executable('vint')
+call dein#add('Kuniwak/vint')
 
 call dein#add('spolu/dwm.vim')
 
@@ -38,6 +37,10 @@ call dein#add('ctrlpvim/ctrlp.vim')
 
 call dein#add('Shougo/deoplete.nvim')
 
+call dein#add('davidhalter/jedi-vim')
+
+call dein#add('zchee/deoplete-jedi')
+
 if executable('ghc-mod')
     call dein#add('eagletmt/neco-ghc')
 endif
@@ -47,9 +50,13 @@ call dein#add('mxw/vim-jsx')
 
 call dein#add('nathanaelkane/vim-indent-guides')
 
+call dein#add('metakirby5/codi.vim')
+
 call dein#add('tpope/vim-eunuch')
 
 call dein#add('digitaltoad/vim-pug')
+
+"call dein#add('lifepillar/vim-mucomplete')
 
 call dein#add('mhartington/oceanic-next')
 
@@ -82,7 +89,7 @@ set incsearch
 set hlsearch
 
 "Autocompletion
-set completeopt=menu,menuone,longest
+setl completeopt=menu,menuone,longest
 
 "No backups or swap files
 set nobackup
@@ -136,11 +143,19 @@ let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
-let g:deoplete#disable_auto_complete = 1
 
 augroup deoplete
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END
+
+"-------------------------------------------------------------------{ VIM-JEDI }
+
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+
+"-----------------------------------------------------------------{ MUCOMPLETE }
+
+"MUcompleteAutoOn *.py
 
 "------------------------------------------------------------------{ FILETYPES }
 
@@ -148,6 +163,12 @@ augroup END
 augroup quickfix
     autocmd FileType qf setlocal nonumber
     autocmd FileType qf setlocal colorcolumn=
+augroup END
+
+"Python
+
+augroup python
+    autocmd FileType python setlocal omnifunc=jedi#completions
 augroup END
 
 "Haskell
