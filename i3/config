@@ -26,6 +26,14 @@ font pango:tewi 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Colours
+set $bg_active "#073642"
+set $bg_inactive "#002b36"
+set $bg_urgent "#cb4b16"
+
+set $text_active "#fdf6e3"
+set $text_inactive "#586e75"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -134,14 +142,16 @@ for_window [class="^termite$"] border pixel 10, title_format "%title"
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/current -n
 
 # rofi
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+#bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+bindsym $mod+space exec rofi -show run -lines 5 -eh 2 -width 100 -padding 605 -opacity "95" -bw 0 -bc $bg_active -bg $bg_active -fg $text_active -hlbg "$bg_active" -hlfg "#9575cd"
 
 # gaps
 gaps inner 10
 gaps outer 0
 
 # Compton
-exec --no-startup-id compton
+exec --no-startup-id compton -f
+exec VBoxClient-all
 
 # change focus
 bindsym $mod+h focus left
