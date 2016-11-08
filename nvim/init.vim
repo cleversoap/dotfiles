@@ -27,7 +27,8 @@ call dein#add('spolu/dwm.vim')
 
 call dein#add('Lokaltog/vim-easymotion')
 
-call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 
 call dein#add('ervandew/supertab')
 
@@ -47,6 +48,8 @@ endif
 
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
+
+call dein#add('elixir-lang/vim-elixir')
 
 call dein#add('nathanaelkane/vim-indent-guides')
 
@@ -108,7 +111,7 @@ set ttimeoutlen=0
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='oceanicnext'
+let g:airline_theme='luna'
 
 "----------------------------------------------------------------------{ CTRLP }
 
@@ -210,6 +213,9 @@ let g:indent_guides_exclude_filetypes = ['help', 'vim', 'javascript', 'haskell']
 
 "----------------------------------------------------------------------[ THEME ]
 
+if (has("termguicolors"))
+    set termguicolors
+endif
 syntax enable
 colorscheme OceanicNext
 
@@ -218,7 +224,7 @@ colorscheme OceanicNext
 "gui colours
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-set background=dark
+"set background=dark
 set encoding=utf-8
 
 "Transparent background
