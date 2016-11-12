@@ -59,6 +59,8 @@ call dein#add('tpope/vim-eunuch')
 
 call dein#add('digitaltoad/vim-pug')
 
+call dein#add('octol/vim-cpp-enhanced-highlight')
+
 "call dein#add('lifepillar/vim-mucomplete')
 
 call dein#add('mhartington/oceanic-next')
