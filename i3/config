@@ -143,7 +143,7 @@ exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/current -n
 
 # rofi
 #bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
-bindsym $mod+space exec rofi -show run -lines 5 -eh 2 -width 100 -padding 605 -opacity "95" -bw 0 -bc $bg_active -bg $bg_active -fg $text_active -hlbg "$bg_active" -hlfg "#9575cd"
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -lines 5 -eh 2 -width 100 -padding 605 -opacity "95" -bw 0 -bc $bg_active -bg $bg_active -fg $text_active -hlbg "$bg_active" -hlfg "#9575cd"'
 
 # gaps
 gaps inner 10
