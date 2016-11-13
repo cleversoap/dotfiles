@@ -63,6 +63,8 @@ call dein#add('octol/vim-cpp-enhanced-highlight')
 
 "call dein#add('lifepillar/vim-mucomplete')
 
+call dein#add('scons.vim')
+
 call dein#add('mhartington/oceanic-next')
 
 call dein#end()
@@ -171,7 +173,6 @@ augroup quickfix
 augroup END
 
 "Python
-
 augroup python
     autocmd FileType python setlocal omnifunc=jedi#completions
 augroup END
@@ -193,6 +194,11 @@ if executable('vint')
         autocmd BufWritePost *.vim Neomake vint
     augroup END
 endif
+
+"Scons
+augroup scons
+    au BufNewFile,BufRead SCons* set filetype=scons
+augroup END
 
 "-------------------------------------------------------------------{ SUPERTAB }
 
