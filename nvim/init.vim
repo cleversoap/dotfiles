@@ -42,6 +42,8 @@ call dein#add('davidhalter/jedi-vim')
 
 call dein#add('zchee/deoplete-jedi')
 
+call dein#add('hynek/vim-python-pep8-indent')
+
 if executable('ghc-mod')
     call dein#add('eagletmt/neco-ghc')
 endif
@@ -225,6 +227,9 @@ if (has("termguicolors"))
     set termguicolors
 endif
 syntax enable
+set background=dark
+hi clear
+let g:colors_name="OceanicNext"
 colorscheme OceanicNext
 
 "Some terminals that don't properly report capabilities will fail rendering
