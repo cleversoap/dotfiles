@@ -49,7 +49,10 @@ if executable('ghc-mod')
 endif
 
 call dein#add('pangloss/vim-javascript')
+
 call dein#add('mxw/vim-jsx')
+
+call dein#add('sbdchd/neoformat')
 
 call dein#add('elixir-lang/vim-elixir')
 
@@ -136,6 +139,16 @@ let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>
 "--------------------------------------------------------------------{ VIM-JSX }
 
 let g:jsx_ext_required = 0
+
+"------------------------------------------------------------------{ NEOFORMAT }
+
+if executable('prettier')
+    let g:neoformat_javascript_prettier = {
+        \ 'exe': 'prettier',
+        \ 'args': ['--stdin', '--tab-width 4'],
+        \ 'stdin': 1
+        \ }
+endif
 
 "--------------------------------------------------------------------{ NEOMAKE }
 
