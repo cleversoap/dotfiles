@@ -118,6 +118,7 @@ set ttimeoutlen=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled=1
 
 "----------------------------------------------------------------------{ CTRLP }
 
