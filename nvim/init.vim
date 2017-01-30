@@ -20,8 +20,9 @@ call dein#add('tpope/vim-fugitive')
 
 call dein#add('neomake/neomake')
 
-"if executable('vint')
-call dein#add('Kuniwak/vint')
+if executable('vint')
+    call dein#add('Kuniwak/vint')
+endif
 
 call dein#add('spolu/dwm.vim')
 
@@ -52,6 +53,10 @@ call dein#add('pangloss/vim-javascript')
 
 call dein#add('mxw/vim-jsx')
 
+call dein#add('leafgarland/typescript-vim')
+
+call dein#add('Quramy/tsuquyomi')
+
 call dein#add('sbdchd/neoformat')
 
 call dein#add('elixir-lang/vim-elixir')
@@ -65,8 +70,6 @@ call dein#add('tpope/vim-eunuch')
 call dein#add('digitaltoad/vim-pug')
 
 call dein#add('octol/vim-cpp-enhanced-highlight')
-
-"call dein#add('lifepillar/vim-mucomplete')
 
 call dein#add('scons.vim')
 
@@ -114,6 +117,88 @@ set esckeys
 set ttimeout
 set ttimeoutlen=0
 
+"----------------------------------------------------------------------[ THEME ]
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+syntax enable
+set background=dark
+hi clear
+let g:colors_name="OceanicNext"
+colorscheme OceanicNext
+
+"Some terminals that don't properly report capabilities will fail rendering
+"the background with this (eg. Guake) as well as some themes that don't report
+"gui colours
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"set background=dark
+set encoding=utf-8
+
+"Transparent background
+"hi Normal ctermfg=255 ctermbg=none
+
+"----------------------------------------------------------------[ KEYBINDINGS ]
+
+"Save a keystroke when entering commands
+nnoremap ; :
+
+"Homerow escape to normal
+inoremap jk <esc>
+
+"No need for ex or macros mode
+nnoremap Q <nop>
+map q <nop>
+
+"Easier to reach leader
+let g:mapleader = ','
+
+"Normalise backspace
+set backspace=2
+
+"Line wrap based navigation
+nnoremap j gj
+nnoremap k gk
+
+"Tabs
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>w :tabclose<CR>
+nnoremap <leader>[ :tabprevious<CR>
+nnoremap <leader>] :tabnext<CR>
+
+
+"Tab Formatting
+set expandtab
+set smarttab
+set autoindent
+set copyindent
+set softtabstop=4
+set shiftwidth=4
+
+"Use tabs in makefiles
+augroup makefile
+    autocmd FileType make setlocal noexpandtab
+augroup END
+
+"Clear search highlights
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+"Undo / Redo
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
+
+"Format and return to current position
+nnoremap FF gg=G``
+
+"List navigation
+nnoremap l] :lnext<CR>
+nnoremap l[ :lprevious<CR>
+nnoremap lo :lopen<CR>
+nnoremap lq :lclose<CR>
+
 "--------------------------------------------------------------------[ PLUGINS ]
 
 "--------------------------------------------------------------------{ AIRLINE }
@@ -139,6 +224,14 @@ let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>
 "--------------------------------------------------------------------{ VIM-JSX }
 
 let g:jsx_ext_required = 0
+
+"-----------------------------------------------------------------{ TYPESCRIPT }
+
+let g:tsuquyomi_completion_detail = 1
+augroup typescript
+    autocmd FileType typescript setlocal softtabstop=2
+    autocmd FileType typescript setlocal shiftwidth=2
+augroup END
 
 "------------------------------------------------------------------{ NEOFORMAT }
 
@@ -235,84 +328,4 @@ let g:indent_guides_exclude_filetypes = ['help', 'vim', 'javascript', 'haskell']
 "    autocmd BufLeave * if &ft ==# 'sass' | IndentGuidesDisable | endif
 "augroup END
 
-"----------------------------------------------------------------------[ THEME ]
 
-if (has("termguicolors"))
-    set termguicolors
-endif
-syntax enable
-set background=dark
-hi clear
-let g:colors_name="OceanicNext"
-colorscheme OceanicNext
-
-"Some terminals that don't properly report capabilities will fail rendering
-"the background with this (eg. Guake) as well as some themes that don't report
-"gui colours
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-"set background=dark
-set encoding=utf-8
-
-"Transparent background
-"hi Normal ctermfg=255 ctermbg=none
-
-"----------------------------------------------------------------[ KEYBINDINGS ]
-
-"Save a keystroke when entering commands
-nnoremap ; :
-
-"Homerow escape to normal
-inoremap jk <esc>
-
-"No need for ex or macros mode
-nnoremap Q <nop>
-map q <nop>
-
-"Easier to reach leader
-let g:mapleader = ','
-
-"Normalise backspace
-set backspace=2
-
-"Line wrap based navigation
-nnoremap j gj
-nnoremap k gk
-
-"Tabs
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>w :tabclose<CR>
-nnoremap <leader>[ :tabprevious<CR>
-nnoremap <leader>] :tabnext<CR>
-
-
-"Tab Formatting
-set expandtab
-set smarttab
-set autoindent
-set copyindent
-set softtabstop=4
-set shiftwidth=4
-
-"Use tabs in makefiles
-augroup makefile
-    autocmd FileType make setlocal noexpandtab
-augroup END
-
-"Clear search highlights
-nmap <silent> <leader>/ :nohlsearch<CR>
-
-"Undo / Redo
-noremap <C-Z> u
-inoremap <C-Z> <C-O>u
-noremap <C-Y> <C-R>
-inoremap <C-Y> <C-O><C-R>
-
-"Format and return to current position
-nnoremap FF gg=G``
-
-"List navigation
-nnoremap l] :lnext<CR>
-nnoremap l[ :lprevious<CR>
-nnoremap lo :lopen<CR>
-nnoremap lq :lclose<CR>
