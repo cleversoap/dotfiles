@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Create the config directory and stow polybar/config
+CFG=$XDG_CONFIG_HOME/polybar
+mkdir -p $CFG
+stow . --target $CFG

@@ -1,0 +1,98 @@
+[colors]
+transparent = #00000000
+background = #2f343f
+foreground = #ebdbb2
+red = #ff0000
+dcyan = #689d6a
+dgreen = #98971a
+dyellow = #d79921
+tcyan = #808ec07c
+tgreen = #80b8bb26
+tyellow = #80fabd2f
+
+magenta = #d3869b
+tmagenta = #80d3869b
+dmagenta = #b16286
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[bar/top]
+width = 100%
+height = 26
+offset-x = 0
+offset-y = 5
+padding-left = 5
+
+locale = en_US.UTF-8
+
+modules-left = i3 xwindow
+modules-center = date
+modules-right = volume
+
+tray-position = right
+tray-padding = 2
+
+underline-size = 3
+spacing = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = FontAwesome:size=8;0
+font-1 = Tewi:size=8:fontformat=truetype
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.dyellow}
+label-mode-padding = 2
+
+label-focused-foreground = ${colors.magenta}
+label-focused-background = ${colors.tmagenta}
+label-focused-underline = ${colors.dmagenta}
+label-focused-padding = 2
+
+label-unfocused-padding = 2
+
+label-urgent-padding = 2
+
+label-visible-padding = 2
+
+[module/volume]
+type = internal/volume
+format-volume = <label-volume>
+label-muted = " muted"
+label-volume =  %percentage%%
+format-volume-underline = ${colors.dgreen}
+format-volume-padding = 2
+mapping = true
+format-volume-background = ${colors.tgreen}
+format-muted-background = ${colors.red}
+format-muted-padding = 2
+
+[module/date]
+type = internal/date
+interval = 1
+date = "  %A, %d. %B"
+time = "%r"
+label = "%{A3:date:}%date% | %time%%{A}"
+format-underline = ${colors.dcyan}
+format-padding = 2
+format-background = ${colors.tcyan}
