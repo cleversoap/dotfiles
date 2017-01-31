@@ -53,9 +53,11 @@ call dein#add('pangloss/vim-javascript')
 
 call dein#add('mxw/vim-jsx')
 
-call dein#add('leafgarland/typescript-vim')
+call dein#add('HerringtonDarkholme/yats.vim')
 
-call dein#add('Quramy/tsuquyomi')
+if executable('tsserver')
+    call dein#add('mhartington/nvim-typescript')
+endif
 
 call dein#add('sbdchd/neoformat')
 
