@@ -288,6 +288,12 @@ augroup python
     autocmd FileType python setlocal omnifunc=jedi#completions
 augroup END
 
+"JSON
+augroup json
+    autocmd FileType json setlocal softtabstop=2
+    autocmd FileType json setlocal shiftwidth=2
+augroup END
+
 "Haskell
 if executable('ghc-mod')
     let g:haskellmode_completion_ghc = 0
