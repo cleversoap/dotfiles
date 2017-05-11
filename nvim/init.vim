@@ -55,6 +55,8 @@ call dein#add('mxw/vim-jsx')
 
 call dein#add('HerringtonDarkholme/yats.vim')
 
+call dein#add('ianks/vim-tsx')
+
 if executable('tsserver')
     call dein#add('mhartington/nvim-typescript')
 endif
@@ -73,7 +75,7 @@ call dein#add('digitaltoad/vim-pug')
 
 call dein#add('octol/vim-cpp-enhanced-highlight')
 
-call dein#add('scons.vim')
+call dein#add('vim-scripts/scons.vim')
 
 call dein#add('mhartington/oceanic-next')
 
@@ -233,6 +235,8 @@ let g:tsuquyomi_completion_detail = 1
 augroup typescript
     autocmd FileType typescript setlocal softtabstop=2
     autocmd FileType typescript setlocal shiftwidth=2
+    autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+    autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 augroup END
 
 "------------------------------------------------------------------{ NEOFORMAT }
