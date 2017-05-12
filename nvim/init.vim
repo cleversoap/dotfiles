@@ -117,7 +117,7 @@ set noswapfile
 "Timeouts - this is in an effort to resolve an issue with certain keys
 "having a delay when entering normal mode from insert
 "eg. Leave Insert, Enter Normal, pressing h is quick, pressing l has a delay
-set esckeys
+"set esckeys
 set ttimeout
 set ttimeoutlen=0
 
