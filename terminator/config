@@ -65,3 +65,4 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     use_system_font = False
+    login_shell = True
