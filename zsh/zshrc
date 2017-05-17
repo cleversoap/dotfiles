@@ -19,14 +19,21 @@ if ! zgen saved; then
 
     # Prezto - important to note that these must also be configured
     # in ~/.zpreztorc otherwise zgen won't load them properly
-    zgen prezto
-    zgen prezto git
-    zgen prezto syntax-highlighting
-    zgen prezto history-substring-search
+    #zgen prezto
+    #zgen prezto git
+    #zgen prezto syntax-highlighting
+    #zgen prezto history-substring-search
+    #zgen prezto node
+    #zgen prezto prompt
+    #
+    # oh-my-zsh
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/command-not-found
 
-    # Pure
-    zgen load mafredri/zsh-async
-    zgen load sindresorhus/pure
+    # Spaceship theme
+    zgen load denysdovhan/spaceship-zsh-theme spaceship
 
     # CLV
     zgen load cleversoap/clv
@@ -35,10 +42,6 @@ if ! zgen saved; then
     zgen save
 
 fi
-
-# Base16 Shell
-BASE16_SHELL=$XDG_DATA_HOME/shell-themes/base16/scripts/base16-oceanicnext.sh
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Causes issues with globs in zgen
 unsetopt nocaseglob
@@ -74,7 +77,6 @@ fi
 
 # Setup prompt
 autoload -U promptinit && promptinit
-prompt pure
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title

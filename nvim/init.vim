@@ -77,7 +77,8 @@ call dein#add('octol/vim-cpp-enhanced-highlight')
 
 call dein#add('vim-scripts/scons.vim')
 
-call dein#add('mhartington/oceanic-next')
+"call dein#add('mhartington/oceanic-next')
+call dein#add('joshdick/onedark.vim')
 
 call dein#end()
 
@@ -123,14 +124,14 @@ set ttimeoutlen=0
 
 "----------------------------------------------------------------------[ THEME ]
 
-if (has("termguicolors"))
-    set termguicolors
-endif
+"if (has("termguicolors"))
+"    set termguicolors
+"endif
 syntax enable
-set background=dark
 hi clear
-let g:colors_name="OceanicNext"
-colorscheme OceanicNext
+"set background=dark
+let g:onedark_termcolors=256
+colorscheme onedark
 
 "Some terminals that don't properly report capabilities will fail rendering
 "the background with this (eg. Guake) as well as some themes that don't report
@@ -209,7 +210,8 @@ nnoremap lq :lclose<CR>
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='luna'
+"let g:airline_theme='luna'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 
 "----------------------------------------------------------------------{ CTRLP }

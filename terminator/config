@@ -58,11 +58,16 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 1.0
-    cursor_color = "#aaaaaa"
-    font = Fantasque Sans Mono 10
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    scrollback_infinite = True
     scrollbar_position = hidden
+    palette = "#000000:#eb6e67:#95ee8f:#f8c456:#6eaafb:#d886f3:#6cdcf7:#b2b2b2:#50536b:#eb6e67:#95ee8f:#f8c456:#6eaafb:#d886f3:#6cdcf7:#dfdfdf"
+    background_image = None
+    background_darkness = 0.98
+    cursor_color = "#bbbbbb"
+    foreground_color = "#abb2bf"
+    icon_bell = False
+    copy_on_selection = True
+    background_color = "#282c34"
+    font = Fantasque Sans Mono 10
+    scrollback_infinite = True
     use_system_font = False
     login_shell = True
