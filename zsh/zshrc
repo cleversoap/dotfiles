@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
@@ -19,21 +20,12 @@ if ! zgen saved; then
 
     # Prezto - important to note that these must also be configured
     # in ~/.zpreztorc otherwise zgen won't load them properly
-    #zgen prezto
-    #zgen prezto git
-    #zgen prezto syntax-highlighting
-    #zgen prezto history-substring-search
-    #zgen prezto node
-    #zgen prezto prompt
-    #
-    # oh-my-zsh
-    zgen oh-my-zsh
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
-
-    # Spaceship theme
-    zgen load denysdovhan/spaceship-zsh-theme spaceship
+    zgen prezto
+    zgen prezto git
+    zgen prezto syntax-highlighting
+    zgen prezto history-substring-search
+    zgen prezto node
+    zgen prezto prompt
 
     # CLV
     zgen load cleversoap/clv
@@ -77,6 +69,7 @@ fi
 
 # Setup prompt
 autoload -U promptinit && promptinit
+prompt pure
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title

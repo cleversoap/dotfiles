@@ -77,7 +77,8 @@ call dein#add('octol/vim-cpp-enhanced-highlight')
 
 call dein#add('vim-scripts/scons.vim')
 
-"call dein#add('mhartington/oceanic-next')
+call dein#add('ntpeters/vim-better-whitespace')
+
 call dein#add('joshdick/onedark.vim')
 
 call dein#end()
@@ -121,25 +122,28 @@ set noswapfile
 "set esckeys
 set ttimeout
 set ttimeoutlen=0
+set nocursorline
 
 "----------------------------------------------------------------------[ THEME ]
-
-"if (has("termguicolors"))
-"    set termguicolors
-"endif
-syntax enable
-hi clear
-"set background=dark
-let g:onedark_termcolors=256
-colorscheme onedark
-
 "Some terminals that don't properly report capabilities will fail rendering
 "the background with this (eg. Guake) as well as some themes that don't report
 "gui colours
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-"set background=dark
+if (empty($TMUX))
+    if (has("nvim"))
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    endif
+    if (has("termguicolors"))
+        set termguicolors
+    endif
+endif
+
 set encoding=utf-8
+
+"syntax enable
+syntax on
+hi clear
+colorscheme onedark
 
 "Transparent background
 "hi Normal ctermfg=255 ctermbg=none
@@ -208,10 +212,11 @@ nnoremap lq :lclose<CR>
 
 "--------------------------------------------------------------------{ AIRLINE }
 
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
 "let g:airline_theme='luna'
 let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 
 "----------------------------------------------------------------------{ CTRLP }
@@ -298,6 +303,11 @@ augroup END
 augroup json
     autocmd FileType json setlocal softtabstop=2
     autocmd FileType json setlocal shiftwidth=2
+augroup END
+
+"Javascript
+augroup javascript
+    autocmd FileType javascript setlocal colorcolumn=80,120
 augroup END
 
 "Haskell
