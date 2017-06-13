@@ -2,6 +2,7 @@
 transparent = #00000000
 background = #2f343f
 foreground = #ebdbb2
+white = #ffffff
 red = #ff0000
 dcyan = #689d6a
 dgreen = #98971a
@@ -9,7 +10,6 @@ dyellow = #d79921
 tcyan = #808ec07c
 tgreen = #80b8bb26
 tyellow = #80fabd2f
-
 magenta = #d3869b
 tmagenta = #80d3869b
 dmagenta = #b16286
@@ -64,8 +64,8 @@ label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.dyellow}
 label-mode-padding = 2
 
-label-focused-foreground = ${colors.magenta}
-label-focused-background = ${colors.tmagenta}
+label-focused-foreground = ${colors.white}
+label-focused-background = ${colors.magenta}
 label-focused-underline = ${colors.dmagenta}
 label-focused-padding = 2
 
