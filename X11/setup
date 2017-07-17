@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Create the config directory
+CFG=$XDG_CONFIG_HOME/X11
+mkdir -p $CFG
+
+# Stow
+stow . --target $CFG
