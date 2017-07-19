@@ -32,4 +32,15 @@ URxvt.cursorColor : #2de0a7
 URxvt.geometry : 70x20
 URxvt.thickness : 5
 
-URxvt.perl-ext-common: tabbed
+URxvt.perl-ext-common: default,matcher,tabbedex
+URxvt.url-launcher: dwb
+URxvt.matcher.button: 1
+
+URxvt.colorUL: #4682B4
+URxvt.tabbed.tabbar-fg: 0
+URxvt.tabbed.tabbar-bg: 7
+URxvt.tabbed.tab-fg: 7
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.autohide: yes
+URxvt.tabbed.new-button: none
+URxvt.tabbed.title: no
