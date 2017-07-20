@@ -81,6 +81,8 @@ call dein#add('ntpeters/vim-better-whitespace')
 
 call dein#add('joshdick/onedark.vim')
 
+call dein#add('cleversoap/gloom.vim')
+
 call dein#end()
 
 "-------------------------------------------------------------[ NEOVIM TOGGLES ]
@@ -143,7 +145,7 @@ set encoding=utf-8
 "syntax enable
 syntax on
 hi clear
-colorscheme onedark
+colorscheme gloom
 
 "Transparent background
 "hi Normal ctermfg=255 ctermbg=none
@@ -207,6 +209,11 @@ nnoremap l] :lnext<CR>
 nnoremap l[ :lprevious<CR>
 nnoremap lo :lopen<CR>
 nnoremap lq :lclose<CR>
+
+"Syntax group under cursor
+nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "--------------------------------------------------------------------[ PLUGINS ]
 

@@ -1,3 +1,5 @@
+URxvt.loginShell: true
+
 URxvt.color0:   #292a44
 URxvt.color1:   #6dfedf
 URxvt.color2:   #e88e2c
@@ -19,8 +21,10 @@ URxvt.color15:  #e88e2c
 URxvt.background: #292a44
 URxvt.foreground: #678bdc
 
-URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=true
-URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=true
+!URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=true
+!URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=true
+URxvt.font: xft:tewii:style=Regular:antialias=true:size=9
+URxvt.boldFont: xft:tewii:style=Bold:antialias=true:size=9
 
 URxvt.depth: 32
 URxvt.shading: 30
