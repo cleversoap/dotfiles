@@ -1,4 +1,9 @@
+!----------------------------------------------------------------------[ URXVT ]
+
 URxvt.loginShell: true
+
+URxvt.background: #292a44
+URxvt.foreground: #678bdc
 
 URxvt.color0:   #292a44
 URxvt.color1:   #6dfedf
@@ -18,16 +23,12 @@ URxvt.color13:  #ff6f9f
 URxvt.color14:  #ed4781
 URxvt.color15:  #e88e2c
 
-URxvt.background: #292a44
-URxvt.foreground: #678bdc
+!URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=false
+!URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=false
 
-!URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=true
-!URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=true
-URxvt.font: xft:tewii:style=Regular:antialias=true:size=9
-URxvt.boldFont: xft:tewii:style=Bold:antialias=true:size=9
+URxvt.font: xft:tewii:style=Regular:antialias=false:size=9
+URxvt.boldFont: xft:tewii:style=Bold:antialias=false:size=9
 
-URxvt.depth: 32
-URxvt.shading: 30
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 10
@@ -36,10 +37,12 @@ URxvt.cursorColor : #2de0a7
 URxvt.geometry : 70x20
 URxvt.thickness : 5
 
+! Extensions
 URxvt.perl-ext-common: default,matcher,tabbedex
 URxvt.url-launcher: dwb
 URxvt.matcher.button: 1
 
+! Tabs
 URxvt.colorUL: #4682B4
 URxvt.tabbed.tabbar-fg: 0
 URxvt.tabbed.tabbar-bg: 7
@@ -48,3 +51,19 @@ URxvt.tabbed.tab-bg: 0
 URxvt.tabbed.autohide: yes
 URxvt.tabbed.new-button: none
 URxvt.tabbed.title: no
+
+! disable ctrl-shift
+!URxvt.iso14755_52: false
+!URxvt.iso14755: false
+
+!URxvt.letterSpace: -2
+
+!------------------------------------------------------------------------[ XFT ]
+
+!Xft.dpi: 82
+!Xft.antialias: true
+!Xft.hinting: true
+!Xft.rgba: rgb
+!Xft.autohint: false
+!Xft.hintstyle: hintfull
+!Xft.lcdfilter: lcddefault

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Create the data directory
+FDIR=$XDG_DATA_HOME/fonts
+mkdir -p $FDIR
+
+# Stow
+stow . --target $FDIR
