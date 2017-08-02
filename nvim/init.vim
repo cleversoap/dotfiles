@@ -24,6 +24,8 @@ if executable('vint')
     call dein#add('Kuniwak/vint')
 endif
 
+call dein#add('scrooloose/nerdtree')
+
 call dein#add('spolu/dwm.vim')
 
 call dein#add('Lokaltog/vim-easymotion')
@@ -79,9 +81,14 @@ call dein#add('vim-scripts/scons.vim')
 
 call dein#add('ntpeters/vim-better-whitespace')
 
+call dein#add('jparise/vim-graphql')
+
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
+
+" Must be loaded after all other plugins
+call dein#add('ryanoasis/vim-devicons')
 
 call dein#end()
 
@@ -209,6 +216,9 @@ nnoremap l] :lnext<CR>
 nnoremap l[ :lprevious<CR>
 nnoremap lo :lopen<CR>
 nnoremap lq :lclose<CR>
+
+"Toggle NERDTREE
+nmap <leader>e :NERDTreeToggle<CR>
 
 "Syntax group under cursor
 nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
