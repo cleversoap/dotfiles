@@ -23,11 +23,8 @@ URxvt.color13:  #ff6f9f
 URxvt.color14:  #ed4781
 URxvt.color15:  #e88e2c
 
-!URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=false
-!URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=false
-
-URxvt.font: xft:tewii:style=Regular:antialias=false:size=9
-URxvt.boldFont: xft:tewii:style=Bold:antialias=false:size=9
+URxvt.font:     xft:Fantasque Sans Mono Nerd Font:size=10
+URxvt.boldFont: xft:Fantasque Sans Mono Nerd Font:bold:size=10
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
