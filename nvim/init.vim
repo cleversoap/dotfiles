@@ -87,9 +87,6 @@ call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
 
-" Must be loaded after all other plugins
-call dein#add('ryanoasis/vim-devicons')
-
 call dein#end()
 
 "-------------------------------------------------------------[ NEOVIM TOGGLES ]

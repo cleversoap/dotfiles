@@ -23,8 +23,8 @@ URxvt.color13:  #ff6f9f
 URxvt.color14:  #ed4781
 URxvt.color15:  #e88e2c
 
-URxvt.font:     xft:Fantasque Sans Mono Nerd Font:pixelsize=11
-URxvt.boldFont: xft:Fantasque Sans Mono Nerd Font:bold:pixelsize=11
+URxvt.font:     xft:lucy tewii:pixelsize=9
+URxvt.boldFont: xft:lucy tewii:style=Bold:pixelsize=9
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
@@ -51,8 +51,6 @@ URxvt.tabbed.title: no
 ! disable ctrl-shift
 !URxvt.iso14755_52: false
 !URxvt.iso14755: false
-
-!URxvt.letterSpace: -2
 
 !------------------------------------------------------------------------[ XFT ]
 
