@@ -23,8 +23,8 @@ URxvt.color13:  #ff6f9f
 URxvt.color14:  #ed4781
 URxvt.color15:  #e88e2c
 
-URxvt.font:     xft:Fantasque Sans Mono Nerd Font:size=10
-URxvt.boldFont: xft:Fantasque Sans Mono Nerd Font:bold:size=10
+URxvt.font:     xft:Fantasque Sans Mono Nerd Font:pixelsize=11
+URxvt.boldFont: xft:Fantasque Sans Mono Nerd Font:bold:pixelsize=11
 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
@@ -57,9 +57,9 @@ URxvt.tabbed.title: no
 !------------------------------------------------------------------------[ XFT ]
 
 !Xft.dpi: 82
-!Xft.antialias: true
-!Xft.hinting: true
-!Xft.rgba: rgb
-!Xft.autohint: false
-!Xft.hintstyle: hintfull
-!Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
