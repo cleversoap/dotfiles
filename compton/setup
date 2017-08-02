@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Create the config directory
-CFG=$XDG_CONFIG_HOME/X11
+CFG=$XDG_CONFIG_HOME/compton
 mkdir -p $CFG
 
-# Stow
+# Link with stow
 stow . --target $CFG

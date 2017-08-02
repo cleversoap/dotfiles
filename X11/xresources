@@ -21,10 +21,8 @@ URxvt.color15:  #e88e2c
 URxvt.background: #292a44
 URxvt.foreground: #678bdc
 
-!URxvt.font:     xft:Fantasque Sans Mono:size=10:antialias=true
-!URxvt.boldFont: xft:Fantasque Sans Mono:bold:size=10:antialias=true
-URxvt.font: xft:tewii:style=Regular:antialias=true:size=9
-URxvt.boldFont: xft:tewii:style=Bold:antialias=true:size=9
+URxvt.font: xft:lucy tewii:style=Regular:antialias=false:size=11:pixelsize=11
+URxvt.boldFont: xft:lucy tewii:style=Bold:antialias=false:size=11:pixelsize=11
 
 URxvt.depth: 32
 URxvt.shading: 30
