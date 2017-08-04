@@ -2,7 +2,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:tewi 8
+font pango:tewii 15
 
 # Colours
 set $bg_active "#073642"
@@ -99,21 +99,28 @@ bindsym $mod+r mode "resize"
 
 # Start the topbar - do not start with a "bar" section otherwise
 # i3-bar starts and it will have a bottom bar in it
-exec_always TZ=Australia/Brisbane polybar top
+exec --no-startup-id TZ=Australia/Brisbane polybar top
 
 # ---------------------------------
 
 # Colours           Border  BG      Font
-client.focused      #A3BE8C #2B303B #C0C5CE
+client.focused      #FDF6D3 #FDF6D3 #657B83
 client.unfocused    #2b303B #2B303B #65737E
 
 # Borders
 for_window [class=".*"] border normal 5
-for_window [class=".*"] title_format "<span font='tewi 8'> ➤ %title</span>"
+for_window [class=".*"] title_format "<span font='lucy tewii 8'> %title</span>"
 
 # Specific window classes
-for_window [class="^Chromium$"] border pixel 5
-for_window [class="^Terminator$"] border pixel 5
+
+# URXVT
+for_window [class="^URxvt$"] border normal 0
+
+# CHROMIUM
+for_window [class="^Chromium$"] border pixel 0
+
+# DEPRECATED
+#for_window [class="^Terminator$"] border pixel 5
 #for_window [class="^chromium$"] border pixel 0
 #for_window [class="^termite$"] border pixel 10, title_format "%title"
 
