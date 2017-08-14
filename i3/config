@@ -18,6 +18,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start a browser
+bindsym $mod+Shift+Return exec vivaldi-stable
+
 # kill focused window
 bindsym $mod+Shift+q kill
 # enter fullscreen mode for the focused container
@@ -118,6 +121,9 @@ for_window [class="^URxvt$"] border normal 0
 
 # CHROMIUM
 for_window [class="^Chromium$"] border pixel 0
+
+# VIVALDI
+for_window [class="^Vivaldi-stable$"] border pixel 0
 
 # DEPRECATED
 #for_window [class="^Terminator$"] border pixel 5
