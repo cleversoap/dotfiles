@@ -1,63 +1,69 @@
 !----------------------------------------------------------------------[ URXVT ]
 
-URxvt.loginShell: true
+URxvt*loginShell: true
 
-URxvt.background: #292a44
-URxvt.foreground: #678bdc
+URxvt*background: #292a44
+URxvt*foreground: #678bdc
 
-URxvt.color0:   #292a44
-URxvt.color1:   #6dfedf
-URxvt.color2:   #e88e2c
-URxvt.color3:   #ae81ff
-URxvt.color4:   #ff6f9f
-URxvt.color5:   #7aa5ff
-URxvt.color6:   #ed4781
-URxvt.color7:   #678bdc
+URxvt*color0:   #292a44
+URxvt*color1:   #6dfedf
+URxvt*color2:   #e88e2c
+URxvt*color3:   #ae81ff
+URxvt*color4:   #ff6f9f
+URxvt*color5:   #7aa5ff
+URxvt*color6:   #ed4781
+URxvt*color7:   #678bdc
 
-URxvt.color8:   #6dfedf
-URxvt.color9:   #e88e2c
-URxvt.color10:  #ae81ff
-URxvt.color11:  #ffbc69
-URxvt.color12:  #ff6f9f
-URxvt.color13:  #ff6f9f
-URxvt.color14:  #ed4781
-URxvt.color15:  #e88e2c
+URxvt*color8:   #6dfedf
+URxvt*color9:   #e88e2c
+URxvt*color10:  #ae81ff
+URxvt*color11:  #ffbc69
+URxvt*color12:  #ff6f9f
+URxvt*color13:  #ff6f9f
+URxvt*color14:  #ed4781
+URxvt*color15:  #e88e2c
 
-URxvt.font:     xft:lucy tewii:pixelsize=9
-URxvt.boldFont: xft:lucy tewii:style=Bold:pixelsize=9
+!URxvt*font:     xft:lucy tewii:pixelsize=9
+!URxvt*boldFont: xft:lucy tewii:style=Bold:pixelsize=9
+URxvt*font: xft:FantasqueSansMono Nerd Font:pixelsize=12
+URxvt*boldFont: xft:FantasqueSansMono Nerd Font:style=Bold:pixelsize=12
+!URxvt*font: xft:FuraCode Nerd Font:style=Regular:size=11
+!URxvt*boldFont: xft:FuraCode Nerd Font:style=Regular:size=11
 
-URxvt.scrollBar: false
-URxvt.cursorBlink: true
-URxvt.internalBorder: 10
-URxvt.cursorUnderline : true
-URxvt.cursorColor : #2de0a7
-URxvt.geometry : 70x20
-URxvt.thickness : 5
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*internalBorder: 10
+URxvt*cursorUnderline : true
+URxvt*cursorColor : #2de0a7
+URxvt*geometry : 70x20
+URxvt*thickness : 5
 
-URxvt.perl-ext-common: default,matcher,tabbedex
-URxvt.url-launcher: dwb
-URxvt.matcher.button: 1
+URxvt*perl-ext-common: default,matcher,tabbedex
+URxvt*url-launcher: dwb
+URxvt*matcher.button: 1
 
 ! Tabs
-URxvt.colorUL: #4682B4
-URxvt.tabbed.tabbar-fg: 0
-URxvt.tabbed.tabbar-bg: 7
-URxvt.tabbed.tab-fg: 7
-URxvt.tabbed.tab-bg: 0
-URxvt.tabbed.autohide: yes
-URxvt.tabbed.new-button: none
-URxvt.tabbed.title: no
+URxvt*colorUL: #4682B4
+URxvt*tabbed.tabbar-fg: 0
+URxvt*tabbed.tabbar-bg: 7
+URxvt*tabbed.tab-fg: 7
+URxvt*tabbed.tab-bg: 0
+URxvt*tabbed.autohide: yes
+URxvt*tabbed.new-button: none
+URxvt*tabbed.title: no
 
 ! disable ctrl-shift
-!URxvt.iso14755_52: false
-!URxvt.iso14755: false
+!URxvt*iso14755_52: false
+!URxvt*iso14755: false
+
+URxvt*letterSpace: -1
 
 !------------------------------------------------------------------------[ XFT ]
 
-!Xft.dpi: 82
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
+Xft*dpi: 82
+Xft*antialias:  true
+Xft*hinting:    true
+Xft*rgba:       rgb
+Xft*autohint:   false
+Xft*hintstyle:  hintfull
+Xft*lcdfilter:  lcddefault

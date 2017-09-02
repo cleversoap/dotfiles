@@ -83,9 +83,13 @@ call dein#add('ntpeters/vim-better-whitespace')
 
 call dein#add('jparise/vim-graphql')
 
+call dein#add('tikhomirov/vim-glsl')
+
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
+
+call dein#add('ryanoasis/vim-devicons')
 
 call dein#end()
 
@@ -258,6 +262,11 @@ augroup typescript
     autocmd FileType typescript setlocal shiftwidth=2
     autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
     autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+augroup END
+
+"-----------------------------------------------------------------------{ GLSL }
+augroup glsl
+    autocmd BufNewFile,BufRead *.vs,*.fs setlocal filetype=glsl
 augroup END
 
 "------------------------------------------------------------------{ NEOFORMAT }
