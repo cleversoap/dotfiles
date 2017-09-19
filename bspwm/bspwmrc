@@ -1,0 +1,7 @@
+#! /bin/sh
+
+xsetroot -cursor_name left_ptr
+xrdb ~/.Xresources
+compton &
+polybar top &
+sxhkd &
