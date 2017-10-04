@@ -1,0 +1,5 @@
+super + alt + Escape
+    bspc quit
+
+super + Return
+   urxvt

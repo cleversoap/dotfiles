@@ -4,4 +4,4 @@ xsetroot -cursor_name left_ptr
 xrdb ~/.Xresources
 compton &
 polybar top &
-sxhkd &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
