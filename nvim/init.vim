@@ -195,11 +195,6 @@ set copyindent
 set softtabstop=4
 set shiftwidth=4
 
-"Use tabs in makefiles
-augroup makefile
-    autocmd FileType make setlocal noexpandtab
-augroup END
-
 "Clear search highlights
 nmap <silent> <leader>/ :nohlsearch<CR>
 
@@ -311,6 +306,11 @@ let g:jedi#auto_vim_configuration = 0
 
 "------------------------------------------------------------------{ FILETYPES }
 
+"zsh
+augroup zsh
+    autocmd BufNewFile,BufRead zprofile,.zprofile setlocal filetype=zsh
+augroup END
+
 "Quickfix
 augroup quickfix
     autocmd FileType qf setlocal nonumber
@@ -354,6 +354,11 @@ endif
 "Scons
 augroup scons
     au BufNewFile,BufRead SCons* set filetype=scons
+augroup END
+
+"Makefile
+augroup makefile
+    autocmd FileType make setlocal noexpandtab
 augroup END
 
 "-------------------------------------------------------------------{ SUPERTAB }

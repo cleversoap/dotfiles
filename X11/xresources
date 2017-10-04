@@ -1,6 +1,7 @@
 !----------------------------------------------------------------------[ URXVT ]
 
 URxvt*loginShell: true
+URxvt.loginShell: true
 
 URxvt*background: #292a44
 URxvt*foreground: #678bdc
