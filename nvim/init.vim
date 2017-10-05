@@ -85,6 +85,8 @@ call dein#add('jparise/vim-graphql')
 
 call dein#add('tikhomirov/vim-glsl')
 
+call dein#add('kovetskiy/sxhkd-vim')
+
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
