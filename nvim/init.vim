@@ -137,10 +137,10 @@ set ttimeoutlen=0
 set nocursorline
 
 "----------------------------------------------------------------------[ THEME ]
+
 "Some terminals that don't properly report capabilities will fail rendering
 "the background with this (eg. Guake) as well as some themes that don't report
 "gui colours
-
 if (empty($TMUX))
     if (has("nvim"))
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
