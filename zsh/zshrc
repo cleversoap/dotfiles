@@ -1,5 +1,9 @@
 export SHELL="zsh"
 
+if [ -d $ENV_HOME ]; then
+    export CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
+fi
+
 # Source it again so that zgen will pickup changes from zgen saved
 source "${ZGEN_HOME}/zgen.zsh"
 

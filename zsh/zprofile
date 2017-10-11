@@ -45,8 +45,7 @@ autoload -Uz clv && clv ''
 export ENV_HOME="${XDG_DATA_HOME}/env"
 
 if [ -d $ENV_HOME ]; then
-    CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
-    export CLV_ENVS
+    export CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
 
     # Some plugins require extra init steps, they are checked for and added
     cei_plugins=()
