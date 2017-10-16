@@ -2,14 +2,18 @@
 super + alt + Escape
     bspc quit && pkill polybar && pkill dzen
 
+# Reload bspwm config
+super + shift + Escape
+    pkill -USR1 -x sxhkd
+
 # Confirm that this environment variable is acceptable because XDG is only set
 # in zprofile (although there's no harm in resetting it I guess in zshrc)
 # however it may just be better to directly point to ~/.config and make sure
 # to keep in sync
-#
+
 # It might be nice to try to use $TERMINAL here instead of st directly too
 alt + Return
-    st -e zsh -l -c "tmux -2 -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+    st -e zsh -l -c "tmux -2"
 
 # Open a browser - possible to use $BROWSER environment variable?
 alt + shift + Return
@@ -26,3 +30,27 @@ Print
 # Save screen of focused window
 alt + Print
     mkdir -p $HOME/screenshots && scrot -u $HOME/screenshots/%Y-%m-%d-%T.png
+
+# Close window
+alt + {_,shift + }q
+    bspc window -{c,k}
+
+# Alternate between tiles and monocle layout
+super + m
+    bspc desktop -l next
+
+# Focus the next / previous desktop in the current monitor
+super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+
+# Focus the node in the given direction
+alt + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Move node in the given direction
+alt + shift + {h,j,k,l}
+    bspc node -p {left,down,up,right}
+
+# Rofi
+alt + @space
+    rofi -show run
