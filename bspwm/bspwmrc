@@ -14,3 +14,4 @@ xrdb ~/.Xresources
 compton &
 polybar top &
 sxhkd &
+feh --bg-fill $HOME/Pictures/Wallpapers/current -n
