@@ -6,6 +6,9 @@ bspc config click_to_focus button1
 # Desktops
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+# Window Decorations
+bspc config window_gap 15
+
 # Window rules
 bspc rule -a rofi manage=off
 

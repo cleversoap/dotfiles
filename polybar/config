@@ -1,7 +1,12 @@
 [colors]
+background = #1C2023
+background-alt = #393F45
+foreground = #C7CCD1
+foreground-alt = #565E65
+primary = #C795AE
+secondary = #C7C795
+alert = #C79595
 transparent = #00000000
-background = #2f343f
-foreground = #ebdbb2
 white = #ffffff
 red = #ff0000
 dcyan = #689d6a
@@ -16,16 +21,18 @@ dmagenta = #b16286
 
 [global/wm]
 margin-top = 5
-margin-bottom = 5
+margin-bottom = 0
 
 [bar/top]
-width = 100%
+width = 3410
 height = 26
-offset-x = 0
-offset-y = 5
+offset-x = 15
+offset-y = 10
 padding-left = 5
 
 locale = en_US.UTF-8
+
+enable-ipc = true
 
 modules-left = i3 xwindow
 modules-center = date
@@ -46,34 +53,6 @@ font-1 = Tewi:size=8:fontformat=truetype
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-[module/i3]
-type = internal/i3
-strip-wsnumbers = true
-
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 3
-ws-icon-3 = 4
-ws-icon-4 = 5
-ws-icon-default = 
-
-format = <label-state> <label-mode>
-
-label-mode-foreground = ${colors.background}
-label-mode-background = ${colors.dyellow}
-label-mode-padding = 2
-
-label-focused-foreground = ${colors.white}
-label-focused-background = ${colors.magenta}
-label-focused-underline = ${colors.dmagenta}
-label-focused-padding = 2
-
-label-unfocused-padding = 2
-
-label-urgent-padding = 2
-
-label-visible-padding = 2
 
 [module/volume]
 type = internal/volume
