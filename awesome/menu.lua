@@ -14,7 +14,8 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = {
     { "awesome", myawesomemenu, beautiful.awesome_icon },
     { "terminal", terminal_shell },
-    { "terminal (basic)", terminal }
+    { "terminal (basic)", terminal },
+    { "browser", browser }
 }})
 
 mylauncher = awful.widget.launcher({

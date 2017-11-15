@@ -4,6 +4,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -48,6 +49,7 @@ terminal = "st"
 terminal_shell = terminal .. " -e zsh -l -c \"tmux -2\""
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
+browser = "vivaldi-stable"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -93,6 +95,7 @@ end
 -- }}}
 
 ---{ MENU }
+-- mylauncher comes from this file
 dofile("./menu.lua")
 
 -- Keyboard map indicator and switcher
@@ -153,9 +156,28 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    -- Padding value that determines the width and positioning of the
+    -- working areas as well as the wibar
+    local padding = 10
 
+    -- Create the wibox
+    s.mywibox = awful.wibar({
+        position = "top",
+        ontop = true,
+        width = s.geometry.width - padding * 2,
+        screen = s
+    })
+
+    -- Widgets
+    cpu = wibox.widget.textbox()
+    vicious.register(
+        cpu,
+        vicious.widgets.cpu,
+        "$1%",
+        1
+    )
+
+    -- Layout
     local clayout = wibox.layout.align.horizontal()
     clayout:set_expand("none")
 
@@ -176,9 +198,28 @@ awful.screen.connect_for_each_screen(function(s)
         -- Right Widgets
         {
             layout = wibox.layout.fixed.horizontal,
+            cpu,
             s.mylayoutbox
         },
     }
+
+
+    s.workarea = {
+        x = s.workarea.x + padding,
+        y = s.workarea.y + padding * 2,
+        width = s.workarea.width - padding * 2,
+        height = s.workarea.height - padding
+    }
+    s.padding = {
+        left = s.padding.left + padding,
+        right = s.padding.right + padding,
+        top = s.padding.top + padding * 2,
+        bottom = s.padding.bottom + padding
+    }
+
+    s.mywibox.x = padding
+    s.mywibox.y = padding
+
 end)
 -- }}}
 
