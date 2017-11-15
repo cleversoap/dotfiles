@@ -42,7 +42,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/clv/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "st"
@@ -51,9 +52,7 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 browser = "vivaldi-stable"
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
+-- Default modkey.  Usually, Mod4 is the key with a logo between Control and Alt.  If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
@@ -164,19 +163,12 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
         position = "top",
         ontop = true,
-        height = 36,
+        height = beautiful.bar_height,
         width = s.geometry.width - padding * 2,
+        bg = beautiful.bar_bg,
+        fg = beautiful.bar_fg,
         screen = s
     })
-
-    -- Widgets
-    cpu = wibox.widget.textbox()
-    vicious.register(
-        cpu,
-        vicious.widgets.cpu,
-        "$1%",
-        1
-    )
 
     -- Layout
     local clayout = wibox.layout.align.horizontal()
@@ -199,7 +191,10 @@ awful.screen.connect_for_each_screen(function(s)
         -- Right Widgets
         {
             layout = wibox.layout.fixed.horizontal,
-            cpu,
+            beautiful.widgets.temp,
+            beautiful.widgets.fs,
+            beautiful.widgets.icons.cpu,
+            beautiful.widgets.cpu,
             s.mylayoutbox
         },
     }
@@ -212,8 +207,13 @@ awful.screen.connect_for_each_screen(function(s)
         bottom = s.padding.bottom
     }
 
+    local new_shape = function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, 5)
+    end
+
     s.mywibox.x = padding
     s.mywibox.y = padding
+    s.mywibox.shape = new_shape
 
 end)
 -- }}}
@@ -496,6 +496,12 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    local new_shape = function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, 5)
+    end
+    c.shape = new_shape
+
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
@@ -551,6 +557,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
-beautiful.useless_gap = 5
-beautiful.gap_single_client = true
