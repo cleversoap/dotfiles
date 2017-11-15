@@ -96,7 +96,7 @@ end
 
 ---{ MENU }
 -- mylauncher comes from this file
-dofile("./menu.lua")
+dofile(awful.util.getdir("config") .. "/" .. "menu.lua")
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
