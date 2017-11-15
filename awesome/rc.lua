@@ -164,6 +164,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
         position = "top",
         ontop = true,
+        height = 36,
         width = s.geometry.width - padding * 2,
         screen = s
     })
@@ -204,17 +205,11 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
 
-    s.workarea = {
-        x = s.workarea.x + padding,
-        y = s.workarea.y + padding * 2,
-        width = s.workarea.width - padding * 2,
-        height = s.workarea.height - padding
-    }
     s.padding = {
-        left = s.padding.left + padding,
-        right = s.padding.right + padding,
-        top = s.padding.top + padding * 2,
-        bottom = s.padding.bottom + padding
+        left = s.padding.left,
+        right = s.padding.right,
+        top = s.padding.top + padding,
+        bottom = s.padding.bottom
     }
 
     s.mywibox.x = padding
@@ -556,3 +551,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+beautiful.useless_gap = 5
+beautiful.gap_single_client = true
