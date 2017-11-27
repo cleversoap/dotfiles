@@ -9,24 +9,37 @@ local markup = lain.util.markup
 
 local theme = {}
 
+-- Base colors
+local fg                                        = "#678bdc"
+local bg                                        = "#292a44"
+local normal_bg                                 = "#10112b"
+local focus_bg                                  = "#43445e"
+
 -- General
 theme.dir                                       = awful.util.getdir("config") .. "/themes/clv"
-theme.font                                      = "xos4 Terminus 8"
+theme.font                                      = "Tewii 12"
+
+-- Wallpaper
+theme.wallpaper                                 = "/home/matt/Pictures/Wallpapers/current"
 
 -- Wibar
 theme.bar_height                                = 36
-theme.bar_fg                                    = "#657b83"
-theme.bar_bg                                    = "#fdf6d3"
+theme.bar_fg                                    = "#678bdc"
+theme.bar_bg                                    = normal_bg
 
 -- Window gaps
 theme.useless_gap                               = 5
 theme.gap_single_client                         = true
 
 -- Window borders
-theme.border_width                              = 1
-theme.border_normal                             = "#1c2022"
-theme.border_focus                              = "#606060"
-theme.border_marked                             = "#3ca4d8"
+theme.border_width                              = 0
+
+-- Titlebars
+theme.titlebar_height                           = 36
+theme.titlebar_fg                               = "#678bdc"
+theme.titlebar_bg                               = normal_bg
+theme.titlebar_bg_focus                         = focus_bg
+theme.titlebar_font                             = "xos4 Terminus 8"
 
 -- Menu
 theme.menu_fg_normal                            = "#aaaaaa"

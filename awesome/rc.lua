@@ -59,7 +59,6 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -72,6 +71,8 @@ awful.layout.layouts = {
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
+    -- Put floating here
+    awful.layout.suit.floating
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -130,7 +131,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.maximized(wallpaper, s, false)
     end
 end
 
@@ -480,6 +481,12 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+    { rule = {
+        class = "Vivaldi-stable"
+    },
+    properties = {
+        titlebars_enabled = false
+    }}
 }
 -- }}}
 
@@ -506,6 +513,7 @@ end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
+
     -- buttons for the titlebar
     local buttons = gears.table.join(
         awful.button({ }, 1, function()
@@ -522,8 +530,6 @@ client.connect_signal("request::titlebars", function(c)
 
     awful.titlebar(c) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
         { -- Middle
@@ -542,8 +548,14 @@ client.connect_signal("request::titlebars", function(c)
             awful.titlebar.widget.closebutton    (c),
             layout = wibox.layout.fixed.horizontal()
         },
-        layout = wibox.layout.align.horizontal
+        layout = wibox.layout.align.horizontal,
     }
+
+    awful.titlebar(c, {
+        size = beautiful.titlebar_height,
+        font = beautiful.titlebar_font
+    })
+
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
@@ -553,7 +565,4 @@ client.connect_signal("mouse::enter", function(c)
         client.focus = c
     end
 end)
-
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
