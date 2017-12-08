@@ -28,6 +28,8 @@ call dein#add('scrooloose/nerdtree')
 
 call dein#add('spolu/dwm.vim')
 
+call dein#add('vim-syntastic/syntastic')
+
 call dein#add('Lokaltog/vim-easymotion')
 
 call dein#add('vim-airline/vim-airline')
@@ -72,6 +74,14 @@ call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('metakirby5/codi.vim')
 
 call dein#add('tpope/vim-eunuch')
+
+call dein#add('tpope/vim-dispatch')
+
+call dein#add('radenling/vim-dispatch-neovim')
+
+call dein#add('OrangeT/vim-csharp')
+
+call dein#add('OmniSharp/OmniSharp-vim')
 
 call dein#add('digitaltoad/vim-pug')
 
