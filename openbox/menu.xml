@@ -7,6 +7,11 @@
             </action>
         </item>
         <menu id="terminal-menu" label="Terminals">
+            <item label="Suckless Terminal">
+                <action name="Execute">
+                    <command>st -e zsh -l -c "tmux -2"</command>
+                </action>
+            </item>
             <item label="Terminator">
                 <action name="Execute">
                     <command>terminator</command>
@@ -19,6 +24,11 @@
             </item>
         </menu>
         <menu id="browser-menu" label="Browsers">
+            <item label="Vivaldi">
+                <action name="Execute">
+                    <command>vivaldi-stable</command>
+                </action>
+            </item>
             <item label="Chromium">
                 <action name="Execute">
                     <command>chromium</command>
