@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Create the config directory and stow
+CFG=$XDG_CONFIG_HOME/tint2
+mkdir -p $CFG
+stow . --target $CFG

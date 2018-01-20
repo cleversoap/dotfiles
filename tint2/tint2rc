@@ -1,0 +1,30 @@
+# ----------------------------------------------------------------[ BACKGROUND ]
+
+background_color = #000000 42
+background_color_hover = #333333 42
+
+# ---------------------------------------------------------------------[ PANEL ]
+
+panel_layer = bottom
+strut_policy = follow_size
+panel_monitor = all
+panel_position = top left vertical
+panel_size = 100% 48
+panel_padding = 38 0
+panel_margin = 0 0
+panel_background_id = 1
+panel_items = LT
+wm_menu = 1
+
+# ------------------------------------------------------------------[ LAUNCHER ]
+
+launcher_item_app = /usr/share/applications/blender.desktop
+
+# -------------------------------------------------------------------[ TASKBAR ]
+
+taskbar_mode = multi_desktop
+taskbar_padding = 2 0 2
+task_align = left
+task_padding = 10 10
+taskbar_distribute_size = 1
+task_maximum_size = 48 48

@@ -20,33 +20,26 @@ tmagenta = #80d3869b
 dmagenta = #b16286
 
 [global/wm]
-margin-top = 5
+margin-top = 0
 margin-bottom = 0
 
 [bar/top]
-width = 3410
-height = 26
-offset-x = 15
-offset-y = 10
+width = 100%
+height = 32
+offset-x = 0
+offset-y = 0
 padding-left = 5
-
 locale = en_US.UTF-8
-
 enable-ipc = true
-
-modules-left = i3 xwindow
+modules-left = xwindow
 modules-center = date
 modules-right = volume
-
 tray-position = right
 tray-padding = 2
-
 underline-size = 3
 spacing = 1
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 font-0 = FontAwesome:size=8;0
 font-1 = Tewi:size=8:fontformat=truetype
 
@@ -74,4 +67,4 @@ time = "%r"
 label = "%{A3:date:}%date% | %time%%{A}"
 format-underline = ${colors.dcyan}
 format-padding = 2
-format-background = ${colors.tcyan}
+#format-background = ${colors.tcyan}

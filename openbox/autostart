@@ -1,0 +1,3 @@
+feh --bg-fill $HOME/Pictures/Wallpapers/current -n
+tint2 &
+polybar top &
