@@ -336,9 +336,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+"if has('conceal')
+"  set conceallevel=2 concealcursor=niv
+"endif
 
 "-------------------------------------------------------------------{ VIM-JEDI }
 
@@ -369,8 +369,9 @@ augroup END
 
 "JSON
 augroup json
-    autocmd FileType json setlocal softtabstop=2
-    autocmd FileType json setlocal shiftwidth=2
+    autocmd FileType json setlocal softtabstop=4
+    autocmd FileType json setlocal shiftwidth=4
+    autocmd FileType json setlocal conceallevel=0
 augroup END
 
 "Javascript
