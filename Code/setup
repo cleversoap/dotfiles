@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CFG=$XDG_CONFIG_HOME/Code
+mkdir -p $CFG
+stow . --target $CFG

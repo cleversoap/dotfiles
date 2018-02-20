@@ -1,0 +1,87 @@
+{
+    "window.menuBarVisibility": "toggle",
+
+    "workbench.colorTheme": "Monokai Sharp",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "editor.fontFamily": "Wt-Position Mono Regular",
+    "editor.fontSize": 22,
+    "editor.lineHeight": 16,
+    "editor.renderLineHighlight": "none",
+    "editor.cursorBlinking": "solid",
+    "editor.matchBrackets": false,
+    "editor.codeLens": false,
+
+    "debug.openDebug": "openOnSessionStart",
+    "debug.internalConsoleOptions": "openOnSessionStart",
+    "debug.openExplorerOnEnd": true,
+
+    "FSharp.logLanguageServiceRequestsOutputWindowLevel": "DEBUG",
+    "FSharp.logLanguageServiceRequests": "both",
+    "FSharp.fsiFilePath": "fsharpi",
+    "FSharp.msbuildAutoshow": true,
+    
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+
+    "vim.leader": ",",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": ["<leader>", "/"],
+            "after": [],
+            "commands": [{"command": ":nohl"}]
+        },
+        {
+            "before": ["<C-n>"],
+            "after": [],
+            "commands": [
+                {"command": "workbench.action.splitEditor"},
+                {"command": "workbench.action.files.newUntitledFile"},
+                {"command": "workbench.action.moveEditorLeftInGroup"},
+                {"command": "workbench.action.closeEditorsToTheRight"}
+            ]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "after": [],
+            "commands": [{"command": "workbench.action.files.newUntitledFile"}]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": [],
+            "commands": [{"command": "workbench.action.focusNextGroup"}]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": [],
+            "commands": [{"command": "workbench.action.focusPreviousGroup"}]
+        },
+        {
+            "before": ["<leader>", "]"],
+            "after": [],
+            "commands": [{"command": "workbench.action.nextEditorInGroup"}]
+        },
+        {
+            "before": ["<leader>", "["],
+            "after": [],
+            "commands": [{"command": "workbench.action.previousEditorInGroup"}]
+        }
+    ],
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Wt-Position Mono Regular",
+    "vim.easymotionMarkerFontSize": "22",
+    "vim.easymotionMarkerHeight": 16
+}
