@@ -45,8 +45,7 @@ call dein#add('Shougo/deoplete.nvim')
 
 call dein#add('Shougo/neosnippet.vim')
 
-call dein#add('davidhalter/jedi-vim')
-
+call dein#add('davidhalter/jedi-vim') 
 call dein#add('zchee/deoplete-jedi')
 
 call dein#add('hynek/vim-python-pep8-indent')
@@ -104,8 +103,6 @@ call dein#add('a-watson/vim-gdscript')
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
-
-call dein#add('ryanoasis/vim-devicons')
 
 call dein#end()
 
@@ -260,6 +257,10 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>\@!\||\|&\|in\%(stanceof\)\=\>\)\C'
+
+augroup babel
+    autocmd BufNewFile,BufRead .babelrc setlocal ft=json
+augroup END
 
 "--------------------------------------------------------------------{ VIM-JSX }
 

@@ -24,12 +24,15 @@ URxvt*color13:  #ff6f9f
 URxvt*color14:  #ed4781
 URxvt*color15:  #e88e2c
 
-!URxvt*font:     xft:lucy tewii:pixelsize=9
-!URxvt*boldFont: xft:lucy tewii:style=Bold:pixelsize=9
-URxvt*font: xft:FantasqueSansMono Nerd Font:pixelsize=12
-URxvt*boldFont: xft:FantasqueSansMono Nerd Font:style=Bold:pixelsize=12
+URxvt*font:     xft:lucy tewii:pixelsize=9
+URxvt*boldFont: xft:lucy tewii:style=Bold:pixelsize=9
+!URxvt*font: xft:FantasqueSansMono Nerd Font:pixelsize=12
+!URxvt*boldFont: xft:FantasqueSansMono Nerd Font:style=Bold:pixelsize=12
 !URxvt*font: xft:FuraCode Nerd Font:style=Regular:size=11
 !URxvt*boldFont: xft:FuraCode Nerd Font:style=Regular:size=11
+!URxvt*font: xft:Wt\\-Position Mono:style=Regular:size=20
+!URxvt*boldFont: xft:Wt\\-Position Mono:style=Bold:size=20
+
 
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
@@ -39,32 +42,22 @@ URxvt*cursorColor : #2de0a7
 URxvt*geometry : 70x20
 URxvt*thickness : 5
 
-URxvt*perl-ext-common: default,matcher,tabbedex
+URxvt*perl-ext-common: default,matcher
 URxvt*url-launcher: dwb
 URxvt*matcher.button: 1
-
-! Tabs
-URxvt*colorUL: #4682B4
-URxvt*tabbed.tabbar-fg: 0
-URxvt*tabbed.tabbar-bg: 7
-URxvt*tabbed.tab-fg: 7
-URxvt*tabbed.tab-bg: 0
-URxvt*tabbed.autohide: yes
-URxvt*tabbed.new-button: none
-URxvt*tabbed.title: no
 
 ! disable ctrl-shift
 !URxvt*iso14755_52: false
 !URxvt*iso14755: false
 
-URxvt*letterSpace: -1
+URxvt*letterSpace: 1
 
 !------------------------------------------------------------------------[ XFT ]
 
-Xft*dpi: 82
+!Xft*dpi: 82
 Xft*antialias:  true
-Xft*hinting:    true
+!Xft*hinting:    true
 Xft*rgba:       rgb
-Xft*autohint:   false
-Xft*hintstyle:  hintfull
-Xft*lcdfilter:  lcddefault
+!Xft*autohint:   false
+!Xft*hintstyle:  hintfull
+!Xft*lcdfilter:  lcddefault

@@ -61,3 +61,5 @@ if [ -d $ENV_HOME ]; then
     # Initialise all environments and plugins
     clv env init
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
