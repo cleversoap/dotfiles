@@ -45,7 +45,7 @@ call dein#add('Shougo/deoplete.nvim')
 
 call dein#add('Shougo/neosnippet.vim')
 
-call dein#add('davidhalter/jedi-vim') 
+call dein#add('davidhalter/jedi-vim')
 call dein#add('zchee/deoplete-jedi')
 
 call dein#add('hynek/vim-python-pep8-indent')
@@ -243,7 +243,8 @@ nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 "let g:airline_theme='luna'
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
 
 "----------------------------------------------------------------------{ CTRLP }
 
