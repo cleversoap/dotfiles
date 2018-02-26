@@ -80,10 +80,6 @@ call dein#add('tpope/vim-dispatch')
 
 call dein#add('radenling/vim-dispatch-neovim')
 
-call dein#add('OrangeT/vim-csharp')
-
-call dein#add('OmniSharp/OmniSharp-vim')
-
 call dein#add('digitaltoad/vim-pug')
 
 call dein#add('octol/vim-cpp-enhanced-highlight')
