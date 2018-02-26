@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Create the config directory
+CFG=$XDG_CONFIG_HOME/xmonad
+mkdir -p $CFG
+
+# Stow
+stow . --target $CFG
