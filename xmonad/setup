@@ -4,5 +4,9 @@
 CFG=$XDG_CONFIG_HOME/xmonad
 mkdir -p $CFG
 
+# Create the backup config directory that xmonad erroneously calls back to
+mkdir - $HOME/.xmonad
+
 # Stow
 stow . --target $CFG
+stow . --target $HOME/.xmonad

@@ -1,0 +1,8 @@
+Config {
+
+    -- appearance
+      bgColor = "black"
+    , fgColor = "#646464"
+    , position = Top
+
+}
