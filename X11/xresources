@@ -24,14 +24,14 @@ URxvt*color13:  #ff6f9f
 URxvt*color14:  #ed4781
 URxvt*color15:  #e88e2c
 
-URxvt*font:     xft:lucy tewii:pixelsize=9
-URxvt*boldFont: xft:lucy tewii:style=Bold:pixelsize=9
+!URxvt*font:     xft:lucy tewii:pixelsize=9
+!URxvt*boldFont: xft:lucy tewii:style=Bold:pixelsize=9
 !URxvt*font: xft:FantasqueSansMono Nerd Font:pixelsize=12
 !URxvt*boldFont: xft:FantasqueSansMono Nerd Font:style=Bold:pixelsize=12
 !URxvt*font: xft:FuraCode Nerd Font:style=Regular:size=11
 !URxvt*boldFont: xft:FuraCode Nerd Font:style=Regular:size=11
-!URxvt*font: xft:Wt\\-Position Mono:style=Regular:size=20
-!URxvt*boldFont: xft:Wt\\-Position Mono:style=Bold:size=20
+URxvt*font: xft:Wt\\-Position Mono:style=Regular:size=18
+URxvt*boldFont: xft:Wt\\-Position Mono:style=Bold:size=18
 
 
 URxvt*scrollBar: false
@@ -47,8 +47,8 @@ URxvt*url-launcher: dwb
 URxvt*matcher.button: 1
 
 ! disable ctrl-shift
-!URxvt*iso14755_52: false
-!URxvt*iso14755: false
+URxvt*iso14755_52: false
+URxvt*iso14755: false
 
 URxvt*letterSpace: 1
 
