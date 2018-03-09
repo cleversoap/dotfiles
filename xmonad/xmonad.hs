@@ -1,6 +1,7 @@
 module Main (main) where
 
 import System.Exit
+import System.IO
 import XMonad
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
@@ -14,24 +15,30 @@ import XMonad.Prompt
 import XMonad.Prompt.ConfirmPrompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig
+import XMonad.Util.Run (spawnPipe)
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
 
 main = do
-    -- Start xmobar taskbar (not working as nothing is being fed to it)
-    spawn "xmobar"
+    xmproc <- spawnPipe "xmobar -d"
 
     xmonad $ desktopConfig
         { modMask = mod4Mask
         , manageHook = myManageHook <+> manageHook desktopConfig
         , layoutHook = desktopLayoutModifiers $ myLayouts
-        , logHook = dynamicLogString def >>= xmonadPropLog
+        , logHook = dynamicLogWithPP xmobarPP
+                        { ppOutput = hPutStrLn xmproc
+                        , ppTitle = xmobarColor "green" "" . shorten 50
+                        }
+        , terminal = "alacritty"
+        , borderWidth = 3
         }
 
         `additionalKeysP`
         [ ("M-S-q", confirmPrompt myXPConfig "exit" (io exitSuccess))
         , ("M-p", shellPrompt myXPConfig)
         , ("M-<Esc>", sendMessage (Toggle "Full"))
+        , ("M-S-r", restart "xmonad" True)
         ]
 
 -- Custom Layouts
@@ -52,8 +59,3 @@ myManageHook = composeOne
     [ isDialog -?> doCenterFloat
     , transience
     ]
-
-    --{ terminal = "urxvt"
-    --, modMask = mod4Mask
-    --, borderWidth = 3
-
