@@ -1,5 +1,13 @@
 #!/bin/sh
 
+if ! [[ -n $XDG_CONFIG_HOME ]]; then
+   export XDG_CONFIG_HOME=$HOME/.config
+fi
+
+if ! [[ -n $XDG_DATA_HOME ]]; then
+   export XDG_DATA_HOME=$HOME/.local/share
+fi
+
 # Create the config directory
 CFG=$XDG_CONFIG_HOME/zsh
 mkdir -p $CFG
