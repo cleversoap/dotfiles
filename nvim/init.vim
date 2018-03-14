@@ -46,7 +46,6 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/neosnippet.vim')
 
 call dein#add('davidhalter/jedi-vim')
-
 call dein#add('zchee/deoplete-jedi')
 
 call dein#add('hynek/vim-python-pep8-indent')
@@ -81,10 +80,6 @@ call dein#add('tpope/vim-dispatch')
 
 call dein#add('radenling/vim-dispatch-neovim')
 
-call dein#add('OrangeT/vim-csharp')
-
-call dein#add('OmniSharp/OmniSharp-vim')
-
 call dein#add('digitaltoad/vim-pug')
 
 call dein#add('octol/vim-cpp-enhanced-highlight')
@@ -104,8 +99,6 @@ call dein#add('a-watson/vim-gdscript')
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
-
-call dein#add('ryanoasis/vim-devicons')
 
 call dein#end()
 
@@ -241,12 +234,31 @@ nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 
 "--------------------------------------------------------------------{ AIRLINE }
 
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-"let g:airline_theme='luna'
-let g:airline_theme='onedark'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts = 0
+
+let g:airline_theme = 'onedark'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline_skip_empty_sections = 1
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ''
+let g:airline_symbols.columnr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.readonly = '[READONLY]'
+let g:airline_symbols.maxlinenr = ''
 
 "----------------------------------------------------------------------{ CTRLP }
 
@@ -260,6 +272,10 @@ let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclud
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_opfirst = '\%([,:?^%]\|\([-/+]\)\%(\1\|\*\|\/\)\@!\|\*\/\@!\|=>\@!\||\|&\|in\%(stanceof\)\=\>\)\C'
+
+augroup babel
+    autocmd BufNewFile,BufRead .babelrc setlocal ft=json
+augroup END
 
 "--------------------------------------------------------------------{ VIM-JSX }
 

@@ -1,0 +1,26 @@
+Config {
+
+    -- appearance
+      bgColor = "#030303"
+    , fgColor = "#646464"
+    , font = "xft:Wt\-Position\ Mono:size=22"
+    -- You can move the position around like TopP 0 276
+    , position = Top
+    , borderColor = "black"
+    , persistent = True
+    , allDesktops = True
+    , lowerOnStart = False,
+    , overrideRedirect = False
+
+    , commands = [
+        Run Memory ["-t","Mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Date "%a %b %d %l:%M:%S" "date" 10,
+        Run StdinReader
+    ]
+
+    , sepChar = "%",
+    , alignSep = "}{"
+    , template = "%StdinReader% }{ %memory% <fc=#FFFFCC>%date%</fc>"
+
+}
+

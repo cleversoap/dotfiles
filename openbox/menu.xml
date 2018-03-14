@@ -7,9 +7,19 @@
             </action>
         </item>
         <menu id="terminal-menu" label="Terminals">
+            <item label="URxvt">
+                <action name="Execute">
+                    <command>urxvt -e zsh -l -c "tmux -2"</command>
+                </action>
+            </item>
             <item label="Suckless Terminal">
                 <action name="Execute">
                     <command>st -e zsh -l -c "tmux -2"</command>
+                </action>
+            </item>
+            <item label="Alacritty">
+                <action name="Execute">
+                    <command>alacritty -e zsh -l -c "tmux -2"</command>
                 </action>
             </item>
             <item label="Terminator">
@@ -34,6 +44,15 @@
                     <command>chromium</command>
                 </action>
             </item>
+        </menu>
+        <menu id="apps-menu" label="Apps">
+            <menu id="apps-db-menu" label="Database">
+                <item label="Robo3T">
+                    <action name="Execute">
+                        <command>robo3t</command>
+                    </action>
+                </item>
+            </menu>
         </menu>
         <menu id="system-menu" label="System">
             <item label="Reconfigure">

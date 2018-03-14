@@ -1,12 +1,12 @@
 {
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Monokai Sharp",
+    "workbench.colorTheme": "Gloom",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.colorCustomizations": {
-        "editorIndentGuide.background": "#2229"
+        "editorIndentGuide.background": "#00000033"
     },
 
     "editor.fontFamily": "Wt-Position Mono Regular",

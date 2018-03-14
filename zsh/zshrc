@@ -12,10 +12,9 @@ unsetopt nocaseglob
 unsetopt extendedglob
 
 # Setup prompt
+export PURE_PROMPT_SYMBOL='λ'
 autoload -U promptinit && promptinit
 prompt pure
-
-export PURE_PROMPT_SYMBOL='λ'
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title
