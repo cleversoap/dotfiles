@@ -5,6 +5,9 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorCustomizations": {
+        "editorIndentGuide.background": "#2229"
+    },
 
     "editor.fontFamily": "Wt-Position Mono Regular",
     "editor.fontSize": 22,
@@ -18,11 +21,15 @@
     "debug.internalConsoleOptions": "openOnSessionStart",
     "debug.openExplorerOnEnd": true,
 
+    "files.associations": {
+        "*.fs": "fsharp"
+    },
+
     "FSharp.logLanguageServiceRequestsOutputWindowLevel": "DEBUG",
     "FSharp.logLanguageServiceRequests": "both",
     "FSharp.fsiFilePath": "fsharpi",
     "FSharp.msbuildAutoshow": true,
-    
+
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
