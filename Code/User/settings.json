@@ -21,6 +21,10 @@
     "debug.internalConsoleOptions": "openOnSessionStart",
     "debug.openExplorerOnEnd": true,
 
+    "files.associations": {
+        "*.fs": "fsharp"
+    },
+
     "FSharp.logLanguageServiceRequestsOutputWindowLevel": "DEBUG",
     "FSharp.logLanguageServiceRequests": "both",
     "FSharp.fsiFilePath": "fsharpi",
