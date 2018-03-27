@@ -3,3 +3,4 @@
 *~
 *.DS_Store
 home/.vim/bundle
+.uuid
