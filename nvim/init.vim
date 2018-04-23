@@ -94,8 +94,6 @@ call dein#add('tikhomirov/vim-glsl')
 
 call dein#add('kovetskiy/sxhkd-vim')
 
-call dein#add('a-watson/vim-gdscript')
-
 call dein#add('joshdick/onedark.vim')
 
 call dein#add('cleversoap/gloom.vim')
