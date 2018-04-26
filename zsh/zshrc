@@ -1,4 +1,4 @@
-export SHELL="zsh"
+export SHELL=`which zsh`
 
 if [ -d $ENV_HOME ]; then
     export CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
@@ -14,7 +14,7 @@ unsetopt extendedglob
 # Setup prompt
 export PURE_PROMPT_SYMBOL='λ'
 autoload -U promptinit && promptinit
-prompt pure
+#prompt spaceship
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title

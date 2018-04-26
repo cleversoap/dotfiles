@@ -25,6 +25,9 @@ if ! zgen saved; then
     zgen prezto node
     zgen prezto prompt
 
+    # Spaceship theme
+    zgen load denysdovhan/spaceship-prompt spaceship
+
     # CLV
     zgen load cleversoap/clv
 
