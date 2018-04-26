@@ -9,9 +9,10 @@
         "editorIndentGuide.background": "#00000033"
     },
 
-    "editor.fontFamily": "Wt-Position Mono Regular",
-    "editor.fontSize": 22,
-    "editor.lineHeight": 16,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 12,
+    "editor.lineHeight": 14,
+    "editor.fontLigatures": true,
     "editor.renderLineHighlight": "none",
     "editor.cursorBlinking": "solid",
     "editor.matchBrackets": false,
@@ -88,7 +89,8 @@
         }
     ],
     "vim.easymotion": true,
-    "vim.easymotionMarkerFontFamily": "Wt-Position Mono Regular",
-    "vim.easymotionMarkerFontSize": "22",
-    "vim.easymotionMarkerHeight": 16
+    "vim.easymotionMarkerFontFamily": "Fira Code",
+    "vim.easymotionMarkerFontSize": "12",
+    "vim.easymotionMarkerHeight": 14,
+    "workbench.statusBar.feedback.visible": false
 }
