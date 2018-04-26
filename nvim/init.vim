@@ -49,6 +49,7 @@ call dein#add('davidhalter/jedi-vim')
 call dein#add('zchee/deoplete-jedi')
 
 call dein#add('hynek/vim-python-pep8-indent')
+call dein#add('cespare/vim-toml')
 
 if executable('ghc-mod')
     call dein#add('eagletmt/neco-ghc')
