@@ -22,3 +22,7 @@ export precmd () { print -Pn "\e]2;%n | ${PWD##*/}\a" }
 precmd_functions+=precmd
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if [ -e $HOME/.zshlocal ]; then
+    source "$HOME/.zshlocal"
+fi
