@@ -95,9 +95,7 @@ call dein#add('tikhomirov/vim-glsl')
 
 call dein#add('kovetskiy/sxhkd-vim')
 
-call dein#add('joshdick/onedark.vim')
-
-call dein#add('cleversoap/gloom.vim')
+call dein#add('whatyouhide/vim-gotham')
 
 call dein#end()
 
@@ -161,7 +159,7 @@ set encoding=utf-8
 "syntax enable
 syntax on
 hi clear
-colorscheme gloom
+colorscheme gotham
 
 "Transparent background
 "hi Normal ctermfg=255 ctermbg=none
@@ -235,7 +233,7 @@ nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 
 let g:airline_powerline_fonts = 0
 
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'gotham'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
