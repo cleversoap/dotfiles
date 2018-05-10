@@ -15,9 +15,6 @@ mkdir -p $CFG
 # Create the data directory for shell themes
 STD=$XDG_DATA_HOME/shell-themes
 mkdir -p $STD
-if [ ! -d $STD/the-one-theme ]; then
-    git clone https://github.com/benniemosher/the-one-theme.git $STD/the-one-theme
-fi
 
 # Create the data directory for zgen and clone the zgen repo there
 if [ ! -d $HOME/.zgen ]; then

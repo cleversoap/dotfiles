@@ -6,3 +6,5 @@ zstyle ':prezto:module:history-substring-search' color 'yes'
 zstyle ':prezto:load' pmodule 'git'
 zstyle ':prezto:load' pmodule 'node'
 zstyle ':prezto:load' pmodule 'prompt'
+
+zstyle ':prezto:module:prompt' theme 'pure'

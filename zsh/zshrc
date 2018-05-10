@@ -1,4 +1,4 @@
-export SHELL="zsh"
+export SHELL=`which zsh`
 
 if [ -d $ENV_HOME ]; then
     export CLV_ENVS=(`for i in $(ls -d $ENV_HOME/*); do basename $i; done`)
@@ -13,10 +13,15 @@ unsetopt extendedglob
 
 # Setup prompt
 export PURE_PROMPT_SYMBOL='λ'
-autoload -U promptinit && promptinit
-prompt pure
+#autoload -U promptinit && promptinit
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title
 export precmd () { print -Pn "\e]2;%n | ${PWD##*/}\a" }
 precmd_functions+=precmd
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if [ -e $HOME/.zshlocal ]; then
+    source "$HOME/.zshlocal"
+fi

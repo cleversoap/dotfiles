@@ -3,3 +3,5 @@
 *~
 *.DS_Store
 home/.vim/bundle
+.uuid
+Code/User/workspaceStorage
