@@ -13,8 +13,7 @@ unsetopt extendedglob
 
 # Setup prompt
 export PURE_PROMPT_SYMBOL='λ'
-autoload -U promptinit && promptinit
-#prompt spaceship
+#autoload -U promptinit && promptinit
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title
