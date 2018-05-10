@@ -1,7 +1,7 @@
 {
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Gloom",
+    "workbench.colorTheme": "OceanDeep",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -90,5 +90,6 @@
     "vim.easymotion": true,
     "vim.easymotionMarkerFontFamily": "Wt-Position Mono Regular",
     "vim.easymotionMarkerFontSize": "22",
-    "vim.easymotionMarkerHeight": 16
+    "vim.easymotionMarkerHeight": 16,
+    "extensions.ignoreRecommendations": false,
 }
