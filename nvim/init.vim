@@ -159,7 +159,9 @@ set encoding=utf-8
 "syntax enable
 syntax on
 hi clear
+set background = "dark"
 colorscheme gotham
+set termguicolors
 
 "Transparent background
 "hi Normal ctermfg=255 ctermbg=none
