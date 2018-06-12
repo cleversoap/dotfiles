@@ -13,7 +13,10 @@ unsetopt extendedglob
 
 # Setup prompt
 export PURE_PROMPT_SYMBOL='λ'
-#autoload -U promptinit && promptinit
+set PROMPT_SUBST
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title

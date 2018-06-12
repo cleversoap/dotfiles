@@ -16,17 +16,21 @@ source "${ZGEN_HOME}/zgen.zsh"
 
 if ! zgen saved; then
 
-    # Prezto - important to note that these must also be configured
-    # in ~/.zpreztorc otherwise zgen won't load them properly
-    zgen prezto
-    zgen prezto git
-    zgen prezto syntax-highlighting
-    zgen prezto history-substring-search
-    zgen prezto node
-    zgen prezto prompt
-
     # CLV
     zgen load cleversoap/clv
+
+    # Other plugins
+    zgen load mafredri/zsh-async
+    zgen load zsh-users/zsh-autosuggestions
+    zgen load zsh-users/zsh-completions
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
+
+    if which fzf > /dev/null 2>&1; then
+        zgen load junegunn/fzf shell
+    fi
+
+    zgen load sindresorhus/pure
 
     # Save init.zsh for immediate startup next time
     zgen save
@@ -61,3 +65,19 @@ if [ -d $ENV_HOME ]; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Deduplicate the path, with the env plugins this can be necessary on occasion
+dedupe_path() {
+  typeset -a paths result
+  paths=($path)
+
+  while [[ ${#paths} -gt 0 ]]; do
+    p="${paths[1]}"
+    shift paths
+    [[ -z ${paths[(r)$p]} ]] && result+="$p"
+  done
+
+  export PATH=${(j+:+)result}
+}
+
+dedupe_path

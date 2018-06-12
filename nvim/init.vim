@@ -18,17 +18,11 @@ call dein#add('Shougo/dein.vim')
 
 call dein#add('tpope/vim-fugitive')
 
-call dein#add('neomake/neomake')
-
-if executable('vint')
-    call dein#add('Kuniwak/vint')
-endif
-
 call dein#add('scrooloose/nerdtree')
 
 call dein#add('spolu/dwm.vim')
 
-call dein#add('vim-syntastic/syntastic')
+call dein#add('w0rp/ale')
 
 call dein#add('Lokaltog/vim-easymotion')
 
@@ -39,35 +33,40 @@ call dein#add('ervandew/supertab')
 
 call dein#add('junegunn/vim-easy-align')
 
-call dein#add('ctrlpvim/ctrlp.vim')
-
-call dein#add('Shougo/deoplete.nvim')
+if executable('fzf')
+    call dein#add('junegunn/fzf')
+    call dein#add('junegunn/fzf.vim')
+else
+    call dein#add('ctrlpvim/ctrlp.vim')
+endif
 
 call dein#add('Shougo/neosnippet.vim')
 
-call dein#add('davidhalter/jedi-vim')
-call dein#add('zchee/deoplete-jedi')
-
 call dein#add('hynek/vim-python-pep8-indent')
+
 call dein#add('cespare/vim-toml')
 
-if executable('ghc-mod')
-    call dein#add('eagletmt/neco-ghc')
-endif
-
 call dein#add('pangloss/vim-javascript')
-
 call dein#add('mxw/vim-jsx')
 
 call dein#add('HerringtonDarkholme/yats.vim')
-
 call dein#add('ianks/vim-tsx')
 
-if executable('tsserver')
-    call dein#add('mhartington/nvim-typescript')
+call dein#add('sbdchd/neoformat')
+
+if has('win32')
+    call dein#add('autozimu/LanguageClient-neovim', {
+                    \ 'rev': 'next',
+                    \ 'build': 'powershell -executionpolicy bypass -File install.ps1',
+                    \ })
+else
+    call dein#add('autozimu/LanguageClient-neovim', {
+                \ 'rev': 'next',
+                \ 'build': 'bash install.sh',
+                \ })
 endif
 
-call dein#add('sbdchd/neoformat')
+call dein#add('Shougo/deoplete.nvim', )
 
 call dein#add('elixir-lang/vim-elixir')
 
@@ -259,13 +258,21 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.readonly = '[READONLY]'
 let g:airline_symbols.maxlinenr = ''
 
-"----------------------------------------------------------------------{ CTRLP }
+"------------------------------------------------------------------{ CTRLP/FZF }
 
-"This may not be the best way to ignore things
-set wildignore+=*/node_modules/*
+if executable('fzf')
+    let g:fzf_buffers_jump = 1
+    let g:fzf_action = {
+        \ 'ctrl-t': 'tab-split',
+        \ 'ctrl-x': 'split',
+        \ 'ctrl-v': 'vsplit' }
+else
+    "This may not be the best way to ignore things
+    set wildignore+=*/node_modules/*
 
-"Ignore anything not stored in git
-let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+    "Ignore anything not stored in git
+    let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+endif
 
 "-------------------------------------------------------------{ VIM-JAVASCRIPT }
 
@@ -299,21 +306,11 @@ augroup END
 
 if executable('prettier')
     let g:neoformat_javascript_prettier = {
-        \ 'exe': 'prettier',
-        \ 'args': ['--stdin', '--tab-width 4'],
-        \ 'stdin': 1
-        \ }
+                \ 'exe': 'prettier',
+                \ 'args': ['--stdin', '--tab-width 4'],
+                \ 'stdin': 1
+                \ }
 endif
-
-"--------------------------------------------------------------------{ NEOMAKE }
-
-let g:neomake_place_signs = 1
-let g:neomake_open_list = 1
-let g:neomake_warning_sign = { 'text': '>', 'texthl': 'NeomakeWarningSignDefault' }
-let g:neomake_error_sign = { 'text': '>', 'texthl': 'NeomakeErrorSignDefault' }
-augroup neomake
-    autocmd BufUnload * lclose
-augroup END
 
 "-------------------------------------------------------------------{ DEOPLETE }
 
@@ -329,8 +326,8 @@ augroup END
 "----------------------------------------------------------------{ NEOSNIPPETS }
 
 let g:neosnippet#disable_runtime_snippets = {
-\   '_' : 1,
-\ }
+            \   '_' : 1,
+            \ }
 
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory = '$XDG_CONFIG_HOME/nvim/snippets'
@@ -348,21 +345,12 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " \ neosnippet#expandable_or_jumpable() ?
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 "if has('conceal')
 "  set conceallevel=2 concealcursor=niv
 "endif
-
-"-------------------------------------------------------------------{ VIM-JEDI }
-
-let g:jedi#completions_enabled = 1
-let g:jedi#auto_vim_configuration = 0
-
-"-----------------------------------------------------------------{ MUCOMPLETE }
-
-"MUcompleteAutoOn *.py
 
 "------------------------------------------------------------------{ FILETYPES }
 
@@ -379,7 +367,6 @@ augroup END
 
 "Python
 augroup python
-    autocmd FileType python setlocal omnifunc=jedi#completions
 augroup END
 
 "JSON
@@ -395,22 +382,8 @@ augroup javascript
 augroup END
 
 "Haskell
-if executable('ghc-mod')
-    let g:haskellmode_completion_ghc = 0
-    let g:necoghc_enable_detailed_browse = 1
-    augroup haskell
-        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-        "autocmd FileType haskell map <buffer> <leader>' :echo 'ghc-mod lint this-bloody-file' <CR>
-    augroup END
-endif
-
-"Vimscript
-if executable('vint')
-    let g:neomake_vim_enabled_makers = ['vint']
-    augroup neomake_vim
-        autocmd BufWritePost *.vim Neomake vint
-    augroup END
-endif
+augroup haskell
+augroup END
 
 "Scons
 augroup scons
