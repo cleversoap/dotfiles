@@ -36,6 +36,7 @@ call dein#add('junegunn/vim-easy-align')
 if executable('fzf')
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
+    set runtimepath^=$XDG_DATA_HOME/nvim/bundle/repos/github.com/junegunn/fzf
 else
     call dein#add('ctrlpvim/ctrlp.vim')
 endif
@@ -266,6 +267,7 @@ if executable('fzf')
         \ 'ctrl-t': 'tab-split',
         \ 'ctrl-x': 'split',
         \ 'ctrl-v': 'vsplit' }
+    nnoremap <C-P> :Files<CR>
 else
     "This may not be the best way to ignore things
     set wildignore+=*/node_modules/*
@@ -351,6 +353,19 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 "if has('conceal')
 "  set conceallevel=2 concealcursor=niv
 "endif
+
+"------------------------------------------------------------{ LANGUAGE SERVER }
+
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {}
+
+if executable('javascript-typescript-stdio')
+    let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+endif
+
+if executable('pyls')
+    let g:LanguageClient_serverCommands.python = ['pyls']
+endif
 
 "------------------------------------------------------------------{ FILETYPES }
 

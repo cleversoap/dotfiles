@@ -7,6 +7,12 @@ fi
 # Source it again so that zgen will pickup changes from zgen saved
 source "${ZGEN_HOME}/zgen.zsh"
 
+export HISTFILE=$HOME/.zhistory
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+setopt inc_append_history
+setopt share_history
+
 # Causes issues with globs in zgen
 unsetopt nocaseglob
 unsetopt extendedglob
