@@ -23,6 +23,7 @@ set PROMPT_SUBST
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^Xz" zce
 
 # Handle shell titles - prints the user name and directory or directory
 # and currently running process in the title
