@@ -23,6 +23,8 @@ set PROMPT_SUBST
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "\e[A" history-substring-search-up
+bindkey "\e[B" history-substring-search-down
 bindkey "^Xz" zce
 
 # Handle shell titles - prints the user name and directory or directory
