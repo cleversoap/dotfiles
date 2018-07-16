@@ -34,8 +34,3 @@ fi
 if [ ! -L $HOME/.zprofile ]; then
     ln -s $CFG/zprofile $HOME/.zprofile
 fi
-
-# Also link prezto
-if [ ! -L $HOME/.zpreztorc ]; then
-    ln -s $CFG/zpreztorc $HOME/.zpreztorc
-fi
