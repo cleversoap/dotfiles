@@ -267,7 +267,7 @@ if executable('fzf')
         \ 'ctrl-t': 'tab-split',
         \ 'ctrl-x': 'split',
         \ 'ctrl-v': 'vsplit' }
-    nnoremap <C-P> :Files<CR>
+    nnoremap <C-P> :GFiles<CR>
 else
     "This may not be the best way to ignore things
     set wildignore+=*/node_modules/*
