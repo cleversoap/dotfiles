@@ -2,4 +2,32 @@
 
 CFG=$XDG_CONFIG_HOME/Code
 mkdir -p $CFG
+
+code \
+    --install-extension vscodevim.vim \
+    --install-extension eamodio.gitlens \
+    --install-extension donjayamanne.githistory \
+    --install-extension ms-python.python \
+    --install-extension ms-vscode.csharp \
+    --install-extension ms-vscode.mono-debug \
+    --install-extension ionide.ionide-fsharp \
+    --install-extension ionide.ionide-paket \
+    --install-extension ionide.ionide-fake \
+    --install-extension k--kato.docomment \
+    --install-extension unity.unity-debug \
+    --install-extension yclepticstudios.unity-snippets \
+    --install-extension slevesque.shader \
+    --install-extension stevensona.shader-toy \
+    --install-extension yzhang.markdown-all-in-one \
+    --install-extension geequlim.godot-tools \
+    --install-extension kumar-harsh.graphql-for-vscode \
+    --install-extension wallabyjs.quokka-vscode \
+    --install-extension formulahendry.code-runner \
+    --install-extension redhat.java \
+    --install-extension vscjava.vscode-java-debug \
+    --install-extension vscjava.vscode-maven \
+    --install-extension peterjausovec.vscode-docker \
+    --install-extension robinbentley.sass-indented \
+    --install-extension pkief.material-icon-theme
+
 stow . --target $CFG

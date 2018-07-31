@@ -1,7 +1,7 @@
 {
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "OceanDeep",
+    "workbench.colorTheme": "Ariake Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
