@@ -34,9 +34,9 @@ call dein#add('ervandew/supertab')
 call dein#add('junegunn/vim-easy-align')
 
 if executable('fzf')
-    call dein#add('junegunn/fzf')
-    call dein#add('junegunn/fzf.vim')
     set runtimepath^=$XDG_DATA_HOME/nvim/bundle/repos/github.com/junegunn/fzf
+    call dein#add('junegunn/fzf', { 'merged': 0 })
+    call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 else
     call dein#add('ctrlpvim/ctrlp.vim')
 endif
@@ -95,7 +95,7 @@ call dein#add('tikhomirov/vim-glsl')
 
 call dein#add('kovetskiy/sxhkd-vim')
 
-call dein#add('whatyouhide/vim-gotham')
+call dein#add('arcticicestudio/nord-vim')
 
 call dein#end()
 
@@ -142,26 +142,17 @@ set nocursorline
 
 "----------------------------------------------------------------------[ THEME ]
 
-"Some terminals that don't properly report capabilities will fail rendering
-"the background with this (eg. Guake) as well as some themes that don't report
-"gui colours
-if (empty($TMUX))
-    if (has("nvim"))
-        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    endif
-    if (has("termguicolors"))
-        set termguicolors
-    endif
-endif
-
 set encoding=utf-8
 
 "syntax enable
 syntax on
 hi clear
 set background = "dark"
-colorscheme gotham
-set termguicolors
+
+colorscheme nord
+
+"This needs additional validation
+"set termguicolors
 
 "Transparent background
 "hi Normal ctermfg=255 ctermbg=none
@@ -235,7 +226,7 @@ nnoremap <leader>h :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 
 let g:airline_powerline_fonts = 0
 
-let g:airline_theme = 'gotham'
+"let g:airline_theme = 'nord'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
@@ -301,7 +292,7 @@ augroup END
 
 "-----------------------------------------------------------------------{ GLSL }
 augroup glsl
-    autocmd BufNewFile,BufRead *.vs,*.fs setlocal filetype=glsl
+    autocmd BufNewFile,BufRead *.vs setlocal filetype=glsl
 augroup END
 
 "------------------------------------------------------------------{ NEOFORMAT }
