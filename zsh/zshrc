@@ -21,8 +21,11 @@ unsetopt extendedglob
 export PURE_PROMPT_SYMBOL='λ'
 set PROMPT_SUBST
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+if [[ -e $terminfo ]]; then
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
+fi
+
 bindkey "\e[A" history-substring-search-up
 bindkey "\e[B" history-substring-search-down
 bindkey "^Xz" zce
