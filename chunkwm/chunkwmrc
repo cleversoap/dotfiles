@@ -3,7 +3,7 @@
 chunkc core::log_file stdout
 chunkc core::log_level warn
 
-chunkc core::plugin_dir $XDG_DATA_HOME/chunkwm/plugins
+chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
 chunkc core::hotload 1
 chunkc core::unload tiling.so
