@@ -1,0 +1,30 @@
+#!/bin/bash
+
+chunkc core::log_file stdout
+chunkc core::log_level warn
+
+chunkc core::plugin_dir $XDG_DATA_HOME/chunkwm/plugins
+
+chunkc core::hotload 1
+chunkc core::unload tiling.so
+chunkc core::unload ffm.so
+chunkc core::unload border.so
+
+# Tiling Configuration
+chunkc set global_desktop_mode  bsp
+chunkc set 2_desktop_mode       monocle
+chunkc set 5_desktop_mode       float
+
+chunkc set global_desktop_offset_top        8
+chunkc set global_desktop_offset_bottom     8
+chunkc set global_desktop_offset_left       8
+chunkc set global_desktop_offset_right      8
+chunkc set global_desktop_offset_gap        8
+
+chunkc set desktop_padding_step_size    10.0
+chunkc set desktop_gap_step_size        5.0
+
+# Load these plugins at start
+chunkc core::load border.so
+chunkc core::load tiling.so
+chunkc core::load ffm.so

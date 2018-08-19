@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Create the config directory
+CFG=$XDG_CONFIG_HOME/chunkwm
+mkdir -p $CFG
+
+# Also setup the data directory - it is highly likely, especially if installing
+# via homebrew and using the HEAD of the repo, that this won't be able to
+# be consistently located so it may need to be manually populated (eg. the
+# plugin directory will have to manually linked).
+mkdir -p $XDG_DATA_HOME/chunkwm
+
+# Stow
+stow . --target $CFG
+
+# Link because it doesn't support XDG - it's also important to note that
+# the config file, for whatever reason, must be executable. This is already
+# done in the repo but in case it isn't it must be done manually
+ln -s $XDG_CONFIG_HOME/chunkwm/chunkwmrc $HOME/.chunkwmrc

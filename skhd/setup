@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Create the config directory
+CFG=$XDG_CONFIG_HOME/skhd
+mkdir -p $CFG
+
+# Stow
+stow . --target $CFG
+
+# Link to home directory as skhd does not support XDG
+ln -s $XDG_CONFIG_HOME/skhd/skhdrc $HOME/.skhdrc
