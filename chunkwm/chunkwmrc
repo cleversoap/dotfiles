@@ -29,6 +29,9 @@ chunkc set bsp_optimal_ratio    1.618
 chunkc set bsp_split_mode       optimal
 chunkc set bsp_split_ratio      0.575
 
+chunkc set preselect_border_color   0xffd75f5f
+chunkc set focused_border_color     0xff0f6288
+
 # Load these plugins at start
 chunkc core::load border.so
 chunkc core::load tiling.so
