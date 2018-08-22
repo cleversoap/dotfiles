@@ -4,5 +4,19 @@
 CFG=$XDG_CONFIG_HOME/tmux
 mkdir -p $CFG
 
+# Create the plugins directory
+PLG=$XDG_DATA_HOME/tmux/plugins
+mkdir -p $PLG
+
+if [ ! -d "$PLG/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm "$PLG/tpm"
+fi
+
 # Stow
 stow . --target $CFG
+
+# TMUX support for XDG is spotty at best so link
+# to where it expects it
+if [ ! -L $HOME/.tmux.conf ]; then
+    ln -s $XDG_CONFIG_HOME/tmux/tmux.conf $HOME/.tmux.conf
+fi
