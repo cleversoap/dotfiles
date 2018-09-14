@@ -42,7 +42,7 @@
             "after": ["<Esc>"]
         }
     ],
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindings": [
         {
             "before": [";"],
             "after": [":"]
@@ -214,5 +214,6 @@
             }
         }
     ]
-    }
+    },
+    "editor.minimap.enabled": false
 }
