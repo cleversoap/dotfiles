@@ -29,6 +29,7 @@ code \
     --install-extension peterjausovec.vscode-docker \
     --install-extension robinbentley.sass-indented \
     --install-extension pkief.material-icon-theme \
-    --install-extension sleistner.vscode-fileutils
+    --install-extension sleistner.vscode-fileutils \
+    --install-extension eg2.tslint
 
 stow . --target $CFG
