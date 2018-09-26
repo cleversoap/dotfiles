@@ -15,8 +15,10 @@
     "editor.fontLigatures": true,
     "editor.renderLineHighlight": "none",
     "editor.cursorBlinking": "solid",
-    "editor.matchBrackets": false,
     "editor.codeLens": false,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.autoClosingBrackets": false,
 
     "debug.openDebug": "openOnSessionStart",
     "debug.internalConsoleOptions": "openOnSessionStart",
@@ -214,6 +216,5 @@
             }
         }
     ]
-    },
-    "editor.minimap.enabled": false
+    }
 }

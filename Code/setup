@@ -30,6 +30,7 @@ code \
     --install-extension robinbentley.sass-indented \
     --install-extension pkief.material-icon-theme \
     --install-extension sleistner.vscode-fileutils \
-    --install-extension eg2.tslint
+    --install-extension eg2.tslint \
+    --install-extension esbenp.prettier-vscode
 
 stow . --target $CFG
