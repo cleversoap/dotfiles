@@ -217,19 +217,19 @@
                     }
                 ]
             },
-    "[python]": {
-        "editor.rulers": [
-            80
-        ]
-    },
-    "[javascript]": {
-        "editor.rulers": [
-            80, 88, 120
-        ]
-    },
-    "[typescript]": {
-        "editor.rulers": [
-            120
-        ]
-    }
+            "[python]": {
+                "editor.rulers": [
+                    80
+                ]
+            },
+            "[javascript]": {
+                "editor.rulers": [
+                    80, 88, 120
+                ]
+            },
+            "[typescript]": {
+                "editor.rulers": [
+                    120
+                ]
+            }
 }
