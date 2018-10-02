@@ -95,7 +95,7 @@ call dein#add('tikhomirov/vim-glsl')
 
 call dein#add('kovetskiy/sxhkd-vim')
 
-call dein#add('arcticicestudio/nord-vim')
+call dein#add('whatyouhide/vim-gotham')
 
 call dein#end()
 
@@ -149,7 +149,7 @@ syntax on
 hi clear
 set background = "dark"
 
-colorscheme nord
+colorscheme gotham
 
 "This needs additional validation
 "set termguicolors
