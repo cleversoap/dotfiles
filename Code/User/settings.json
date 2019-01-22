@@ -1,24 +1,24 @@
 {
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Ariake Dark",
+    "workbench.colorTheme": "Material Theme Ocean",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.colorCustomizations": {
-        "editorIndentGuide.background": "#00000033"
+        "editorIndentGuide.background": "#00000033",
+        "editorRuler.foreground": "#00000042"
     },
 
-    "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 12,
-    "editor.lineHeight": 14,
+    "editor.fontFamily": "Fixedsys Excelsior",
     "editor.fontLigatures": true,
     "editor.renderLineHighlight": "none",
     "editor.cursorBlinking": "solid",
     "editor.codeLens": false,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.tabCompletion": "on",
 
     "debug.openDebug": "openOnSessionStart",
     "debug.internalConsoleOptions": "openOnSessionStart",
@@ -231,5 +231,7 @@
                 "editor.rulers": [
                     120
                 ]
-            }
-}
+            },
+            "javascript.validate.enable": false,
+            "workbench.startupEditor": "newUntitledFile"
+        }
