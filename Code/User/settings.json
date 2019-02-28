@@ -10,7 +10,7 @@
         "editorRuler.foreground": "#00000042"
     },
 
-    "editor.fontFamily": "Fixedsys Excelsior",
+    "editor.fontFamily": "Hasklig",
     "editor.fontLigatures": true,
     "editor.renderLineHighlight": "none",
     "editor.cursorBlinking": "solid",
@@ -102,9 +102,7 @@
             ],
             "vim.easymotion": true,
             "extensions.ignoreRecommendations": false,
-            "vim.easymotionMarkerFontFamily": "Fira Code",
-            "vim.easymotionMarkerFontSize": "12",
-            "vim.easymotionMarkerHeight": 14,
+            "vim.easymotionMarkerFontFamily": "Hasklig",
             "workbench.statusBar.feedback.visible": false,
             "editor.tokenColorCustomizations": {
                 "textMateRules": [
@@ -233,5 +231,10 @@
                 ]
             },
             "javascript.validate.enable": false,
-            "workbench.startupEditor": "newUntitledFile"
+            "workbench.startupEditor": "newUntitledFile",
+            "editor.fontSize": 14,
+            "terminal.integrated.fontFamily": "Fixedsys Excelsior",
+            "editor.fontWeight": "500",
+            "vim.easymotionMarkerFontWeight": "500",
+            "vim.easymotionMarkerHeight": 20
         }
